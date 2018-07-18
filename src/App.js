@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import CurrentWeather from './CurrentWeather';
-import WeatherData from './WeatherData'
+import Card from './Card';
+import apikeys from './apikeys';
+import Search from './Search';
+import SevenHour from './SevenHour';
+import TenDay from './TenDay';
+import Welcome from './Welcome';
+import WeatherData from './WeatherData';
 import './App.css';
 
 
