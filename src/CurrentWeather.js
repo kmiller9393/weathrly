@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import App from './App';
 
-class CurrentWeather extends Component {
+export default class CurrentWeather extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,6 +23,3 @@ class CurrentWeather extends Component {
     )
   }
 }
-
-
-export default CurrentWeather;
