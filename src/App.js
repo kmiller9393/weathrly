@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import CurrentWeather from './CurrentWeather';
-import WeatherData from './WeatherData'
+import CurrentWeather from './CurrentWeather.js';
+import { city } from './cleaners.js';
 import './App.css';
 
 
@@ -9,16 +9,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      city: '',
+      city: city(),
       country: '',
       temperature: '',
       humidity: '',
       description: ''
     }
-  }
-
-  addLocation = () => {
-    
   }
 
   render() {
