@@ -4,11 +4,17 @@ import CurrentWeather from './CurrentWeather';
 import WeatherData from './WeatherData'
 import './App.css';
 
+const API_KEY = "1443dd5d9e0f4a45";
+
 class App extends Component {
   constructor() {
     super();
-    this.location = {
-      
+    this.state = {
+      city: '',
+      country: '',
+      temperature: '',
+      humidity: '',
+      description: ''
     }
   }
 
