@@ -4,6 +4,10 @@ body {
   background-size: cover;
 }
 
+input, button {
+  outline: none;
+}
+
 .App {
   text-align: center;
 }
