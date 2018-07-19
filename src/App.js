@@ -4,6 +4,7 @@ import CurrentWeather from './CurrentWeather.js';
 import Search from './Search.js';
 import Card from './Card.js';
 import { city } from './cleaners.js';
+import KEY from './apikeys.js';
 import './App.css';
 
 
@@ -17,6 +18,16 @@ class App extends Component {
       // description: ''
     }
   }
+
+  getWeather() {
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/q/co/Denver.json`)
+    .then(response => response.json())
+    .then(data => console.log(data));
+  }
+
+  componentDidMount() {
+    this.getWeather();
+  }  
 
   render() {
     return (
