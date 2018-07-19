@@ -30,12 +30,18 @@ body {
 }
 
 .location-search-input {
-  text-indent: 1em;
+  text-indent: 2em;
   width: 30%;
+}
+
+.location-search-input::placeholder {
+  color: #bbbbbb;
 }
 
 .location-search-button {
   background-color: #f4f4f4;
+  color: #222222;
+  font-weight: 600;
   width: 15%;
 }
 
@@ -59,8 +65,8 @@ input, button {
 }
 
 .App-header {
-  /* background-color: #222; */
-  height: 150px;
+  opacity: .5;
+  height: 3em;
   padding: 20px;
   color: white;
 }
