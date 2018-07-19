@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import CurrentWeather from './CurrentWeather';
-import Card from './Card';
-import apikeys from './apikeys';
-import Search from './Search';
-import SevenHour from './SevenHour';
-import TenDay from './TenDay';
-import Welcome from './Welcome';
-import WeatherData from './WeatherData';
+import CurrentWeather from './CurrentWeather.js';
+import Search from './Search.js';
+import Card from './Card.js';
+import { city } from './cleaners.js';
 import './App.css';
 
 
@@ -15,31 +11,26 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      city: '',
-      country: '',
-      temperature: '',
-      humidity: '',
-      description: ''
+      // country: '',
+      // temperature: '',
+      // humidity: '',
+      // description: ''
     }
-  }
-
-  addLocation = () => {
-    
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title">Welcome to Weathrly</h1>
         </header>
-        <p className="App-intro">
-          To get started, add your location here:
-          <input type="text" />
-          <button onClick={this.addLocation}>Submit</button>
+        <section className="main-section">
+          <Search />
           <CurrentWeather />
-        </p>
+          {/* <Card /> */}
+          <article className="app-component"></article>
+        </section>
       </div>
     );
   }
