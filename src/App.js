@@ -29,10 +29,6 @@ class App extends Component {
     })
   )}
 
-  // componentDidMount() {
-  //   this.getWeather();
-  // }  
-
   render() {
     return (
       <div className="App">
