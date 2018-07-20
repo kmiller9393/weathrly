@@ -3,6 +3,14 @@ import WeatherData from './WeatherData.js';
 import apikeys from './apikeys.js';
 
 
+const weather = {
+  city: 'WeatherData.current_observation.display_location.city',
+  state: 'WeatherData.current_observation.display_location.state_name',
+  temp: 'WeatherData.current_observation.temp_f',
+  condition: 'WeatherData.current_observation.weather'
+}
+
+
 export const city = () => {
   return WeatherData.current_observation.display_location.city;
 }

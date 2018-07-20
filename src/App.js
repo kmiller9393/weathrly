@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import CurrentWeather from './CurrentWeather.js';
 import Search from './Search.js';
 import Card from './Card.js';
+import { state } from './cleaners.js';
 import { city } from './cleaners.js';
 import KEY from './apikeys.js';
 import './App.css';
@@ -20,9 +21,10 @@ class App extends Component {
   }
 
   getWeather() {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/q/co/Denver.json`)
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/q/${state}/${city}.json`)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => console.log(data))
+    .catch (err => alert('SOMETHING BROKE'))
   }
 
   componentDidMount() {
