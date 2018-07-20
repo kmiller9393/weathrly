@@ -12,7 +12,7 @@ export default class Search extends Component {
 
   render() {
     return (
-      <form className="App-intro app-component">
+      <form className="app-component search-component">
         <input type="text" placeholder="Search for a location" className="location-search-input" />
         <button className="location-search-button" onClick={this.addLocation}>Submit</button>
       </form>

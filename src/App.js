@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import CurrentWeather from './CurrentWeather.js';
+import SevenHour from './SevenHour.js';
 import Search from './Search.js';
 import Card from './Card.js';
 import { currWeather } from './cleaners.js';
 import KEY from './apikeys.js';
 import './App.css';
+import TenDay from './TenDay';
 
 
 class App extends Component {
@@ -47,8 +49,10 @@ class App extends Component {
           high={this.state.high}
           low={this.state.low}
           />
+
+          <SevenHour />
           {/* <Card /> */}
-          <article className="app-component"></article>
+          <TenDay />
         </section>
       </div>
     );

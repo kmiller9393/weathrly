@@ -7,31 +7,28 @@ body {
   min-height: 100vh;
 }
 
+.App-title {
+  font-size: 1.6em;
+  color: white;
+}
+
 .main-section {
+  display: inline-grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 5em 30em 25em;
   margin: auto;
   width: 85%;
 }
 
-.weather-icon {
-  height: 2em;
-  margin-right: 2em;
-  vertical-align: middle;
-}
-
-.app-component {
-  background-color: #ffffff40;
-  border-radius: 25px;
-  margin: 50px;
-  padding: 15px;
-}
-
-.current-weather-component {
-  width: 40%;
+/* SEARCH COMPONENT */
+.search-component {
+  width: 90%;
 }
 
 .location-search-input {
   text-indent: 2em;
-  width: 30%;
+  width: 55%;
+  vertical-align: middle;
 }
 
 .location-search-input::placeholder {
@@ -40,9 +37,96 @@ body {
 
 .location-search-button {
   background-color: #f4f4f4;
-  color: #222222;
+  color: #00000095;
   font-weight: 600;
-  width: 15%;
+  width: 25%;
+  vertical-align: middle;
+}
+
+/* SEVEN HOUR FORECAST */
+.seven-hour-component {
+  grid-row: 1 / span 2;
+  height: calc(100% - 2em);
+  width: 90%;
+}
+
+.seven-hour-title {
+  font-size: 1.75em;
+  opacity: .6;
+  height: .5em;
+  padding: 0;
+  color: white;
+}
+
+.seven-hour-article {
+  border-radius: 1em;
+  height: 87%;
+  overflow: scroll;
+}
+
+.seven-hour-hour {
+  background-color: #bbbbbb90;
+  border-radius: .5em;
+  height: 8em;
+  margin-bottom: .25em;
+}
+
+/* CURRENT WEATHER */
+.current-weather-component {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  margin-top: 1em;
+  width: 90%;
+}
+
+.weather-icon {
+  height: 2em;
+  margin-right: 2em;
+  vertical-align: middle;
+}
+
+/* TEN DAY FORECAST */
+.ten-day-component {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 1;
+  height: 16em;
+  margin-top: 2em;
+  width: 95%;
+}
+
+.ten-day-header {
+  color: #ffffff90;
+  line-height: 0;
+}
+
+.ten-day-icon {
+  margin: 0 auto .5em auto;
+  width: 50%;
+}
+
+.ten-day-article {
+  display: inline-flex;
+  height: 85%;
+  width: 100%;
+}
+
+.ten-day-day {
+  background-color: #bbbbbb90;
+  border-radius: .75em;
+  color: #ffffff90;
+  margin: 0 .125em;
+  width: 10%;
+}
+
+.ten-day-day h3 {
+  line-height: 0;
+}
+
+
+.app-component {
+  background-color: #ffffff40;
+  border-radius: 25px;
+  padding: 15px;
 }
 
 input, button {
@@ -65,22 +149,14 @@ input, button {
 }
 
 .App-header {
-  opacity: .5;
-  height: 3em;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.75em;
-}
-
-.App-intro {
-  border-radius: 50px;
   color: black;
   font-size: large;
-  margin: auto;
-  width: calc(100% - 100px);
+  grid-column: 2 / 2;
+  grid-row: 1;
+  height: 1em;
+  margin: 1em;
+  opacity: .6;
+  padding: 0;
 }
 
 @keyframes App-logo-spin {
