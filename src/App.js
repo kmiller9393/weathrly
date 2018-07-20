@@ -12,10 +12,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      // country: '',
-      // temperature: '',
-      // humidity: '',
-      // description: ''
+      city: 'Denver',
+      condition: 'sunny',
+      day: 'Thursday',
+      temp: 100,
+      high: 101,
+      low: 72
     }
   }
 
@@ -38,7 +40,14 @@ class App extends Component {
         </header>
         <section className="main-section">
           <Search />
-          <CurrentWeather />
+          <CurrentWeather 
+          city={this.state.city}
+          condition={this.state.condition}
+          day={this.state.day}
+          temp={this.state.temp}
+          high={this.state.high}
+          low={this.state.low}
+          />
           {/* <Card /> */}
           <article className="app-component"></article>
         </section>

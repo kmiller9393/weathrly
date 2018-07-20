@@ -3,12 +3,7 @@ import App from './App';
 
 
 
-export default class Card extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
+export default function Card(props) {
     return (
       <span className="app-component card-span">
         {/* <p>Element</p>
@@ -19,8 +14,5 @@ export default class Card extends Component {
         <p>Element</p>
         <p>Element</p> */}
       </span>
-    )
-  }
+    );
 }
-
-// export default Card;
