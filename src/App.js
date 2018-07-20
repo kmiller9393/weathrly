@@ -3,8 +3,7 @@ import logo from './logo.svg';
 import CurrentWeather from './CurrentWeather.js';
 import Search from './Search.js';
 import Card from './Card.js';
-import { state } from './cleaners.js';
-import { city } from './cleaners.js';
+import { currWeather } from './cleaners.js';
 import KEY from './apikeys.js';
 import './App.css';
 
@@ -13,8 +12,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      city: 'Denver',
-      condition: 'sunny',
+      city: 'Denver, CO',
+      current: {},
       day: 'Thursday',
       temp: 100,
       high: 101,
@@ -22,16 +21,17 @@ class App extends Component {
     }
   }
 
-  getWeather() {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/q/${state}/${city}.json`)
+  componentDidMount = () => {
+    fetch(`http://api.wunderground.com/api/${KEY}/geolookup/conditions/hourly/forecast10day/q/${this.state.city}.json`)
     .then(response => response.json())
-    .then(data => console.log(data))
-    .catch (err => alert('SOMETHING BROKE'))
-  }
+    .then(response => this.setState({
+      current: currWeather(response)
+    })
+  )}
 
-  componentDidMount() {
-    this.getWeather();
-  }  
+  // componentDidMount() {
+  //   this.getWeather();
+  // }  
 
   render() {
     return (
@@ -43,6 +43,7 @@ class App extends Component {
         <section className="main-section">
           <Search />
           <CurrentWeather 
+          currentInformation={this.state.current}
           city={this.state.city}
           condition={this.state.condition}
           day={this.state.day}
