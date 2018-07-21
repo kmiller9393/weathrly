@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          {/* <img alt="weather logo" src={logo} className="App-logo" alt="logo" /> */}
           <h1 className="App-title">Welcome to Weathrly</h1>
         </header>
         <section className="main-section">
