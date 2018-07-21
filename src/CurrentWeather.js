@@ -17,6 +17,7 @@ export default function CurrentWeather(props) {
         <h2 className="current-weather-temp">{ props.currentInformation.currentTemp }</h2>
         <p className="current-weather-high">Expected High: { props.currentInformation.currentHigh }</p>
         <p className="current-weather-low">Expected Low: { props.currentInformation.currentLow }</p>
+        <p>Summary: { props.currentInformation.overview }</p>
         {/* <p>Summary: {}</p> */}
       </div>
     )

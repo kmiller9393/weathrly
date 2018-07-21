@@ -4,6 +4,7 @@ import CurrentWeather from './CurrentWeather.js';
 import SevenHour from './SevenHour.js';
 import Search from './Search.js';
 import Card from './Card.js';
+import Welcome from './Welcome.js';
 import { currentWeather } from './cleaners.js';
 import KEY from './apikeys.js';
 import './App.css';
@@ -13,12 +14,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      current: {},
-      location: 'Denver, CO',
-      currentDay: 'Thursday',
-      currentTemp: null,
-      currenthigh: null,
-      currentlow: null,
+      currentWeather: {},
+      sevenHour: [],
+      sevenDay: [],
+      location: '',
       lookup: false
     }
     this.filterLocation = this.filterLocation.bind(this);
@@ -28,7 +27,7 @@ class App extends Component {
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${this.state.location}.json`)
     .then(response => response.json())
     .then(response => this.setState({
-      current: currentWeather(response)
+      currentWeather: currentWeather(response)
     })
   )}
 
@@ -45,17 +44,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          {/* <img alt="weather logo" src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title">Welcome to Weathrly</h1>
-        </header>
+        <Welcome />
         <section className="main-section">
           <Search 
           location={this.state.location}
           filterLocation={this.filterLocation}
           />
           { this.state.lookup && <CurrentWeather 
-          currentInformation={this.state.current}
+          currentInformation={this.state.currentWeather}
           /> }
 
           { this.state.lookup && <SevenHour /> }

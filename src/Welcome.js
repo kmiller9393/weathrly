@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import App from './App';
 
 
-export default function Welcome(props) {
+
+export default function Welcome() {
   return (
-
+    <header className="App-header">
+        {/* <img alt="weather logo" src={logo} className="App-logo" alt="logo" /> */}
+        <h1 className="App-title">Welcome to Weathrly</h1>
+    </header>
   );
 }
