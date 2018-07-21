@@ -2,6 +2,9 @@ import React from 'react';
 import App from './App';
 import Image from './images/cloud-2.svg';
 
+var day = new Date();
+var dayNames = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+
 export default function CurrentWeather(props) {
       return(
       <div className="current-weather-component app-component">
@@ -11,7 +14,7 @@ export default function CurrentWeather(props) {
         </h1>
         
         <h2 className="current-weather-condition">{ props.currentInformation.conditions }</h2>
-        <h2 className="current-weather-day">{props.currentInformation.time} </h2>
+          <h2 className="current-weather-day">{dayNames[day.getDay()]} </h2>
         <h2 className="current-weather-temp">{ props.currentInformation.currentTemp }</h2>
         <p className="current-weather-high">Expected High: { props.currentInformation.currentHigh }</p>
         <p className="current-weather-low">Expected Low: { props.currentInformation.currentLow }</p>

@@ -3,6 +3,11 @@ import App from './App';
 import Image from './images/sun.svg';
 
 
+var day = new Date();
+var dayNames = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+day.getDay()
+
+
 export default function TenDay(props) {
   return (
     <div className="app-component ten-day-component">
