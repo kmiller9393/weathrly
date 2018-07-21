@@ -18,7 +18,8 @@ class App extends Component {
       currentDay: 'Thursday',
       currentTemp: null,
       currenthigh: null,
-      currentlow: null
+      currentlow: null,
+      lookup: false
     }
     this.filterLocation = this.filterLocation.bind(this);
   }
@@ -33,7 +34,8 @@ class App extends Component {
 
   filterLocation(search) {
     this.setState({
-      location: search.userInput
+      location: search.userInput,
+      lookup: true
     }); 
     setTimeout(() => {
       this.componentDidMount() 
@@ -52,13 +54,13 @@ class App extends Component {
           location={this.state.location}
           filterLocation={this.filterLocation}
           />
-          <CurrentWeather 
+          { this.state.lookup && <CurrentWeather 
           currentInformation={this.state.current}
-          />
+          /> }
 
-          <SevenHour />
+          { this.state.lookup && <SevenHour /> }
           {/* <Card /> */}
-          <TenDay />
+          {this.state.lookup && <TenDay /> }
         </section>
       </div>
     );
