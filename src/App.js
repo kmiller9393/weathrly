@@ -44,8 +44,8 @@ class App extends Component {
         </header>
         <section className="main-section">
           <Search 
-          filterLocation={this.filterLocation}
           location={this.state.location}
+          filterLocation={this.filterLocation}
           />
           <CurrentWeather 
           currentInformation={this.state.current}

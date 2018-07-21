@@ -10,18 +10,5 @@ export const currentWeather = data => {
         icon: currDay.icon_url 
       }
 
-
-      //let dataName  = data....splice(0, 7);
-
-      //const sevehourobj = dataName.reduce((sevenhourobj, currentEl) {
-        //let blah = {hour:
-                      // temp:}
-
-        // };
-        // sevenhourobj.push(blah)
-        // return acc
-      // }, [])
-
-
   return (currDayObj) //sevenHour, //10dayobj)
 }
