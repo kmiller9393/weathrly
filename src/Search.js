@@ -11,7 +11,7 @@ export default class Search extends Component {
 
   render() {
     return (
-      <form className="App-intro app-component">
+      <form className="App-intro app-component search-component">
         <input 
           type="text" 
           value={this.state.userInput}
