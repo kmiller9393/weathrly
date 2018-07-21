@@ -1,9 +1,8 @@
 import React from 'react';
-import App from './App';
 import Image from './images/cloud-2.svg';
 
-var day = new Date();
-var dayNames = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+let day = new Date();
+let dayNames = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
 export default function CurrentWeather(props) {
       return(
