@@ -7,6 +7,10 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  margin-top: 0;
+}
+
 .App-title {
   font-size: 1.6em;
   color: white;
@@ -22,6 +26,7 @@ body {
 
 /* SEARCH COMPONENT */
 .search-component {
+  color: #bbbbbb;
   width: 90%;
 }
 
@@ -29,10 +34,6 @@ body {
   text-indent: 2em;
   width: 55%;
   vertical-align: middle;
-}
-
-.location-search-input::placeholder {
-  color: #bbbbbb;
 }
 
 .location-search-button {
@@ -60,7 +61,7 @@ body {
 
 .seven-hour-article {
   border-radius: 1em;
-  height: 87%;
+  height: 92%;
   overflow: scroll;
 }
 
@@ -106,7 +107,7 @@ body {
 
 .ten-day-article {
   display: inline-flex;
-  height: 85%;
+  height: 91%;
   width: 100%;
 }
 

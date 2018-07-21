@@ -10,70 +10,70 @@ export default function TenDay(props) {
       <article className="ten-day-article">
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image}/>
+          <img alt="weather logo" className="ten-day-icon" src={Image}/>
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
         
         <span className="ten-day-day">
           <p>Day</p>
-          <img className="ten-day-icon" src={Image} />
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>

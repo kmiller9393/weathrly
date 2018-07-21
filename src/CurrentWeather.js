@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import App from './App';
 import Image from './images/cloud-2.svg';
 
@@ -6,7 +6,7 @@ export default function CurrentWeather(props) {
       return(
       <div className="current-weather-component app-component">
         <h1 className="current-weather-city">
-          <img className="weather-icon" src={ Image } />
+            <img alt="weather logo" className="weather-icon" src={ Image } />
             { props.currentInformation.location }
         </h1>
         
