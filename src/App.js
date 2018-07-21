@@ -34,7 +34,10 @@ class App extends Component {
   filterLocation(search) {
     this.setState({
       location: search.userInput
-    });  
+    }); 
+    setTimeout(() => {
+      this.componentDidMount() 
+    }, 1);
   }
 
   render() {
