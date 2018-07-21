@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch(`http://api.wunderground.com/api/${KEY}/geolookup/conditions/hourly/forecast10day/q/${this.state.location}.json`)
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${this.state.location}.json`)
     .then(response => response.json())
     .then(response => this.setState({
       current: currentWeather(response)
