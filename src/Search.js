@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
 import App from './App';
 
-
 export default class Search extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-
+      userInput: props.location
     }
   }
 
   render() {
     return (
       <form className="App-intro app-component">
-        <input type="text" placeholder="Search for a location" className="location-search-input" />
-        <button className="location-search-button" onClick={this.addLocation}>Submit</button>
+        <input 
+          type="text" 
+          value={this.state.userInput}
+          onChange={(e) => {
+            this.setState({
+              userInput: e.target.value
+            })
+          }}
+          placeholder="Search for a location" 
+          className="location-search-input" 
+          />
+        <button className="location-search-button" onClick={(e) => {
+          e.preventDefault();
+          this.props.filterLocation(this.state);
+        }}>Submit</button>
       </form>
     )
   }
 }
+    

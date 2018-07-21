@@ -3,31 +3,37 @@ import logo from './logo.svg';
 import CurrentWeather from './CurrentWeather.js';
 import Search from './Search.js';
 import Card from './Card.js';
-import { currWeather } from './cleaners.js';
+import { currentWeather } from './cleaners.js';
 import KEY from './apikeys.js';
 import './App.css';
-
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      city: 'Denver, CO',
       current: {},
-      day: 'Thursday',
-      temp: 100,
-      high: 101,
-      low: 72
+      location: 'Denver, CO',
+      currentDay: 'Thursday',
+      currentTemp: null,
+      currenthigh: null,
+      currentlow: null
     }
+    this.filterLocation = this.filterLocation.bind(this);
   }
 
   componentDidMount = () => {
-    fetch(`http://api.wunderground.com/api/${KEY}/geolookup/conditions/hourly/forecast10day/q/${this.state.city}.json`)
+    fetch(`http://api.wunderground.com/api/${KEY}/geolookup/conditions/hourly/forecast10day/q/${this.state.location}.json`)
     .then(response => response.json())
     .then(response => this.setState({
-      current: currWeather(response)
+      current: currentWeather(response)
     })
   )}
+
+  filterLocation(search) {
+    this.setState({
+      location: search.userInput
+    });  
+  }
 
   render() {
     return (
@@ -37,15 +43,12 @@ class App extends Component {
           <h1 className="App-title">Welcome to Weathrly</h1>
         </header>
         <section className="main-section">
-          <Search />
+          <Search 
+          filterLocation={this.filterLocation}
+          location={this.state.location}
+          />
           <CurrentWeather 
           currentInformation={this.state.current}
-          city={this.state.city}
-          condition={this.state.condition}
-          day={this.state.day}
-          temp={this.state.temp}
-          high={this.state.high}
-          low={this.state.low}
           />
           {/* <Card /> */}
           <article className="app-component"></article>
