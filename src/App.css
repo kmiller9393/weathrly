@@ -72,6 +72,12 @@ h1 {
   margin-bottom: .25em;
 }
 
+.seven-hour-times {
+  color: #ffffff95;
+  text-decoration: underline;
+  margin-top: 0;
+}
+
 /* CURRENT WEATHER */
 .current-weather-component {
   grid-row: 2 / span 1;
