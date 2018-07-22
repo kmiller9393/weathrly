@@ -80,16 +80,47 @@ h1 {
 
 /* CURRENT WEATHER */
 .current-weather-component {
+  color: #d1d1d1;
   grid-row: 2 / span 1;
   grid-column: 2 / span 1;
   margin-top: 1em;
   width: 90%;
 }
 
+.current-weather-city {
+  display: flex;
+  font-size: 2em;
+  justify-content: space-between;
+  padding: .75em .75em 0 .75em;
+}
+
+.current-weather-condition {
+  font-size: 1.75em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.current-weather-temp {
+  font-size: 3.25em;
+  margin: 0;
+}
+
 .weather-icon {
-  height: 2em;
-  margin-right: 2em;
+  height: 2.25em;
+  margin: 0;
   vertical-align: middle;
+}
+
+.expected-temps {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 95%
+}
+
+strong {
+  display: block;
+  font-size: 1.5em;
 }
 
 /* TEN DAY FORECAST */
@@ -131,7 +162,7 @@ h1 {
 
 
 .app-component {
-  background-color: #ffffff40;
+  background-color: #00000060;
   border-radius: 25px;
   padding: 1em;
 }
