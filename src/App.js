@@ -8,7 +8,7 @@ import Welcome from './Welcome.js';
 import { currentWeather } from './cleaners.js';
 import KEY from './apikeys.js';
 import './App.css';
-import TenDay from './TenDay';
+import TenDay from './TenDay.js';
 
 class App extends Component {
   constructor() {
@@ -62,7 +62,9 @@ class App extends Component {
           sevenHours={this.state.sevenHours}
           /> }
           {/* <Card /> */}
-          {this.state.lookup && <TenDay /> }
+          {this.state.lookup && <TenDay 
+          tenDays={this.state.tenDays}  
+          /> }
         </section>
       </div>
     );
