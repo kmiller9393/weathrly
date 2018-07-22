@@ -29,9 +29,9 @@ class App extends Component {
     .then(data => {
       let weatherData = currentWeather(data)
       this.setState({
-      currentWeather: weatherData.currDayObj,
-      sevenHours: weatherData.sevenHours,
-      tenDays: weatherData.tenDays
+        currentWeather: weatherData.currDayObj,
+        sevenHours: weatherData.sevenHours,
+        tenDays: weatherData.tenDays
       })
     })
   }  
@@ -58,7 +58,9 @@ class App extends Component {
           { this.state.lookup && <CurrentWeather 
           currentInformation={this.state.currentWeather}
           /> }
-          { this.state.lookup && <SevenHour /> }
+          { this.state.lookup && <SevenHour 
+          sevenHours={this.state.sevenHours}
+          /> }
           {/* <Card /> */}
           {this.state.lookup && <TenDay /> }
         </section>

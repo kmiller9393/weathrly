@@ -15,6 +15,7 @@ export const currentWeather = data => {
       };
 
   sevenHours = data.hourly_forecast;
+  
   tenDays = data.forecast.simpleforecast.forecastday;
 
   weatherData = {
