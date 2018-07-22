@@ -1,4 +1,8 @@
 export const currentWeather = data => {
+  let sevenHours = [];
+  let tenDays = [];
+  let weatherData;
+
   const currDay = data.forecast.simpleforecast.forecastday.find(currDay =>  currDay.period === 1)
   const currDayObj = { 
         location: data.current_observation.display_location.full, 
@@ -7,8 +11,17 @@ export const currentWeather = data => {
         currentLow: currDay.low.fahrenheit + '° F', 
         conditions: currDay.conditions, 
         icon: currDay.icon_url ,
-        overview: data.forecast.txt_forecast.forecastday[0].fcttext_metric
-      }
+        overview: data.forecast.txt_forecast.forecastday[0].fcttext
+      };
 
-  return (currDayObj) //sevenHour, //10dayobj)
+  sevenHours = data.hourly_forecast;
+  tenDays = data.forecast.simpleforecast.forecastday;
+
+  weatherData = {
+    currDayObj,
+    sevenHours,
+    tenDays
+  }
+
+  return (weatherData)
 }

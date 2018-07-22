@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './Card.js'
 
 let date;
 let hour;
@@ -62,3 +63,36 @@ export default function SevenHour(props) {
   );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const SevenHour = (props) => {
+
+// let sevenHours = props.sevenHours.slice(0, -29);
+
+//return (
+//   <div className="SevenHour">
+//   {
+//     sevenHours.map(hour => {
+//       return (
+//         <Card
+//           hour={hour.FCCTIME.civil}
+//           icon={hour.icon_url}
+//           temp={hour.temp.english}
+//         />  
+//       )
+//     })
+//   }
+//   </div>
+// )
+// }

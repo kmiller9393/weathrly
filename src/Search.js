@@ -27,7 +27,7 @@ export default class Search extends Component {
           this.props.filterLocation(this.state);
         }}>Submit</button>
       </form>
-    )
+    );
   }
 }
     

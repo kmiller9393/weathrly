@@ -15,8 +15,8 @@ class App extends Component {
     super();
     this.state = {
       currentWeather: {},
-      sevenHour: [],
-      sevenDay: [],
+      sevenHours: [],
+      tenDays: [],
       location: '',
       lookup: false
     }
@@ -26,10 +26,15 @@ class App extends Component {
   componentDidMount = () => {
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${this.state.location}.json`)
     .then(response => response.json())
-    .then(response => this.setState({
-      currentWeather: currentWeather(response)
+    .then(data => {
+      let weatherData = currentWeather(data)
+      this.setState({
+      currentWeather: weatherData.currDayObj,
+      sevenHours: weatherData.sevenHours,
+      tenDays: weatherData.tenDays
+      })
     })
-  )}
+  }  
 
   filterLocation(search) {
     this.setState({
@@ -53,7 +58,6 @@ class App extends Component {
           { this.state.lookup && <CurrentWeather 
           currentInformation={this.state.currentWeather}
           /> }
-
           { this.state.lookup && <SevenHour /> }
           {/* <Card /> */}
           {this.state.lookup && <TenDay /> }
