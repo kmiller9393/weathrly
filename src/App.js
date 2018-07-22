@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Welcome />
+        {/* <Welcome /> */}
         <section className="main-section">
           <Search 
           location={this.state.location}

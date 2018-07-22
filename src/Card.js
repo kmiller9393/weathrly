@@ -2,14 +2,16 @@ import React from 'react';
 
 export default function Card(props) {
     return (
-      <div>
-        <p>{props.month}</p>
-        <p>{props.day}</p>
-        <p>{props.hour}</p>
-        <p>{props.temp}</p>
+      <div className="card-template">
+        <p className="card-month">{props.month}</p>
+        <p className="card-day">{props.day}</p>
+        <p className="card-hour">{props.hour}</p>
+        <p className="card-temp">{props.temp}</p>
         <img src={props.icon} />
-        <p>{props.high}</p>
-        <p>{props.low}</p>
+        <article className="day-extremes-container">
+          <p className="day-extremes-high">{props.high}<strong> / </strong></p>
+          <p className="day-extremes-low">{props.low}</p>
+        </article>
       </div>
     );
 }
