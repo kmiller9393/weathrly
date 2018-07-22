@@ -20,8 +20,15 @@ h1 {
   display: inline-grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 5em 30em 25em;
-  margin: auto;
+  margin: 1em auto;
   width: 85%;
+}
+
+.card-template {
+  background-color: #ffffff65;
+  border-radius: .5em;
+  height: 8em;
+  width: 100%;
 }
 
 /* SEARCH COMPONENT */
@@ -54,22 +61,48 @@ h1 {
 .seven-hour-title {
   font-size: 1.75em;
   opacity: .6;
-  height: .5em;
+  margin: 0;
   padding: 0;
   color: white;
 }
 
 .seven-hour-article {
   border-radius: 1em;
-  height: 92%;
+  color: #333;
+  height: 93%;
   overflow: scroll;
+  padding: 0;
 }
 
-.seven-hour-hour {
-  background-color: #bbbbbb90;
-  border-radius: .5em;
-  height: 8em;
-  margin-bottom: .25em;
+.seven-hour-article .card-template {
+  width: 99%;
+  margin: .25em auto;
+}
+
+.seven-hour-article .card-month,
+.seven-hour-article p strong {
+  display: none;
+}
+
+.seven-hour-article .card-hour {
+  font-size: 1.25em;
+  font-weight: 800;
+  margin: .75em;
+}
+
+.seven-hour-article .card-temp {
+  font-size: 3em;
+  margin: .75em 1.5em;
+}
+
+.seven-hour-article img {
+  height: 6em;
+  width: 6em;
+}
+
+.seven-hour-article .card-template {
+  display: inline-flex;
+  justify-content: space-around;
 }
 
 .seven-hour-times {
@@ -118,6 +151,16 @@ h1 {
   width: 95%
 }
 
+.current-weather-low {
+  color: #2867cc;
+  font-size: 1.75em;
+}
+
+.current-weather-high {
+  color: #cc2828;
+  font-size: 1.75em;
+}
+
 strong {
   display: block;
   font-size: 1.5em;
@@ -137,23 +180,65 @@ strong {
   line-height: 0;
 }
 
-.ten-day-icon {
-  margin: 0 auto .5em auto;
-  width: 50%;
-}
-
-.ten-day-article {
+.ten-day-container {
   display: inline-flex;
+  justify-content: space-between;
   height: 91%;
   width: 100%;
 }
 
-.ten-day-day {
-  background-color: #bbbbbb90;
+.ten-day-container .card-template {
+  /* background-color: #bbbbbb90; */
   border-radius: .75em;
-  color: #ffffff90;
-  margin: 0 .125em;
-  width: 10%;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-weight: 700;
+  height: 90%;
+  width: 9.6%;
+}
+
+.ten-day-container .card-month,
+.ten-day-container .card-hour,
+.ten-day-container .card-temp {
+  display: none;
+}
+
+.ten-day-container .card-day {
+  margin: 0;
+}
+
+.ten-day-container .card-template img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  vertical-align: middle;
+}
+
+.day-extremes-high,
+.day-extremes-low {
+  font-size: 1.25em;
+  font-weight: 800;
+}
+
+.day-extremes-high,
+.day-extremes-low,
+.day-extremes-high strong {
+  display: inline;
+  vertical-align: middle;
+}
+
+.day-extremes-high {
+  color: #cc2828;
+}
+
+.day-extremes-high strong {
+  color: #333;
+}
+
+.day-extremes-low {
+  color: #2867cc;
 }
 
 .ten-day-day h3 {

@@ -13,7 +13,7 @@ export default function CurrentWeather(props) {
         </h1>
         <h2 className="current-weather-day">{dayNames[day.getDay()]} </h2>
         <h2 className="current-weather-condition">{ props.currentInformation.conditions }</h2>
-        <p>Summary: {props.currentInformation.overview}</p>
+        <p>{props.currentInformation.overview}</p>
         <h2 className="current-weather-temp">{ props.currentInformation.currentTemp }</h2>
         <article className="expected-temps">
             <p className="current-weather-low">Low:<strong>{props.currentInformation.currentLow}</strong></p>
