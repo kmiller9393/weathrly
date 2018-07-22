@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from './images/sun.svg';
-
+import Card from './Card.js';
 
 let day = new Date();
 let todayNumber = day.getDay()
@@ -12,8 +12,15 @@ export default function TenDay(props) {
       <h1 className="ten-day-header">10 Day Forecast</h1>
       <article className="ten-day-article">
         <span className="ten-day-day">
-          <p>{dayNames[todayNumber + 1]}</p>
+          <p>{dayNames[todayNumber]}</p>
           <img alt="weather logo" className="ten-day-icon" src={Image}/>
+          <h3>100</h3>
+          <h3>sunny</h3>
+        </span>
+        
+        <span className="ten-day-day">
+          <p>{dayNames[todayNumber + 1]}</p>
+          <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
         </span>
@@ -69,13 +76,6 @@ export default function TenDay(props) {
         
         <span className="ten-day-day">
           <p>{dayNames[todayNumber + 9]}</p>
-          <img alt="weather logo" className="ten-day-icon" src={Image} />
-          <h3>100</h3>
-          <h3>sunny</h3>
-        </span>
-        
-        <span className="ten-day-day">
-          <p>{dayNames[todayNumber + 10]}</p>
           <img alt="weather logo" className="ten-day-icon" src={Image} />
           <h3>100</h3>
           <h3>sunny</h3>
