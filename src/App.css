@@ -139,7 +139,7 @@ h1 {
 }
 
 .weather-icon {
-  height: 2.25em;
+  height: 2.5em;
   margin: 0;
   vertical-align: middle;
 }
@@ -213,7 +213,6 @@ strong {
   display: block;
   margin: 0 auto;
   width: 50%;
-  vertical-align: middle;
 }
 
 .day-extremes-high,

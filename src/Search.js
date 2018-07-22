@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Index from './index';
 
 export default class Search extends Component {
   constructor(props) {
@@ -6,6 +7,14 @@ export default class Search extends Component {
     this.state = {
       userInput: props.location
     }
+  }
+
+  setLocalStorage() {
+    localStorage.setItem('savedLocation', this.state.userInput)
+  }
+
+  getLocalStorage() {
+    
   }
 
   render() {
@@ -25,6 +34,7 @@ export default class Search extends Component {
         <button className="location-search-button" onClick={(e) => {
           e.preventDefault();
           this.props.filterLocation(this.state);
+          this.setLocalStorage();
         }}>Submit</button>
       </form>
     );
