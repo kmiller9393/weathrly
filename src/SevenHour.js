@@ -11,7 +11,7 @@ let dayHours = (hoursAdded) => {
   hour = date.getHours();
   newHour = hour + hoursAdded;
 
-  if (newHour <= 11) {
+  if (newHour <= 11 || newHour >= 24) {
     timeType = ' AM';
   } else {
     timeType = ' PM';
