@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 export default class Search extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
-      userInput: props.location
+      userInput: this.props.location
     }
   }
 
@@ -24,7 +24,7 @@ export default class Search extends Component {
           />
         <button className="location-search-button" onClick={(e) => {
           e.preventDefault();
-          this.props.filterLocation(this.state);
+          this.props.filterLocation(this.state.userInput);
         }}>Submit</button>
       </form>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from './images/cloud-2.svg';
 
 let day = new Date();
-let dayNames = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+let dayNames = new Array(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]);
 
 export default function CurrentWeather(props) {
       return(
