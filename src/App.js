@@ -35,7 +35,7 @@ class App extends Component {
       })
     })
   }  
-
+  
   filterLocation(search) {
     this.setState({
       location: search.userInput,
@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Welcome /> */}
+        <Welcome />
         <section className="main-section">
           <Search 
           location={this.state.location}

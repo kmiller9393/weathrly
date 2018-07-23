@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './Card.js';
-import { currentWeather } from './cleaners.js';
 
 export default function SevenHour(props) {
 
