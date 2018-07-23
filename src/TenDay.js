@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from './images/sun.svg';
 import Card from './Card.js';
-import { currentWeather } from './cleaners.js';
+
 
 export default function TenDay(props) {
 
