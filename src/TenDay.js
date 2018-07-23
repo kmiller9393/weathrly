@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from './images/sun.svg';
 import Card from './Card.js';
 
 

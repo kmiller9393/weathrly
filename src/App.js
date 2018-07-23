@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import CurrentWeather from './CurrentWeather.js';
 import SevenHour from './SevenHour.js';
 import Search from './Search.js';
-import Card from './Card.js';
 import Welcome from './Welcome.js';
 import { currentWeather } from './cleaners.js';
 import KEY from './apikeys.js';
@@ -20,10 +18,10 @@ class App extends Component {
       location: '',
       lookup: false
     }
-    this.filterLocation = this.filterLocation.bind(this);
+
   }
 
-  componentDidMount = () => {
+  getWeather = () => {
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${this.state.location}.json`)
     .then(response => response.json())
     .then(data => {
@@ -34,16 +32,27 @@ class App extends Component {
         tenDays: weatherData.tenDays
       })
     })
+  }
+
+   componentDidMount = () => {
+    if (Object.keys(localStorage).length > 0) {
+      let savedLocation = localStorage.getItem('inputLocation')
+
+      this.filterLocation(savedLocation);
+    }
   }  
-  
-  filterLocation(search) {
+ 
+
+  filterLocation = (location) => {
     this.setState({
-      location: search.userInput,
+      location: location,
       lookup: true
-    }); 
+    })
     setTimeout(() => {
-      this.componentDidMount() 
-    }, 1);
+      this.getWeather();
+    }, 10);  
+      localStorage.setItem('inputLocation', location);
+
   }
 
   render() {
