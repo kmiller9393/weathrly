@@ -120,11 +120,16 @@ h1 {
   width: 90%;
 }
 
+.current-weather-day {
+  margin: .5em;
+}
+
 .current-weather-city {
   display: flex;
   font-size: 2em;
   justify-content: space-between;
-  padding: .75em .75em 0 .75em;
+  padding: .25em .75em 0 .75em;
+  margin: 0;
 }
 
 .current-weather-condition {
@@ -139,7 +144,7 @@ h1 {
 }
 
 .weather-icon {
-  height: 2.25em;
+  height: 2.5em;
   margin: 0;
   vertical-align: middle;
 }
@@ -213,7 +218,6 @@ strong {
   display: block;
   margin: 0 auto;
   width: 50%;
-  vertical-align: middle;
 }
 
 .day-extremes-high,
