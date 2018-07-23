@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Index from './index';
 
 export default class Search extends Component {
   constructor(props) {
@@ -6,6 +7,14 @@ export default class Search extends Component {
     this.state = {
       userInput: this.props.location
     }
+  }
+
+  setLocalStorage() {
+    localStorage.setItem('savedLocation', this.state.userInput)
+  }
+
+  getLocalStorage() {
+    
   }
 
   render() {

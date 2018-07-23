@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './Card.js';
 
+
 export default function TenDay(props) {
 
 let tenDays = props.tenDays;

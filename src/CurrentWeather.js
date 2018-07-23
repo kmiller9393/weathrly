@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from './images/cloud-2.svg';
+import { currentWeather } from './cleaners.js';
 
 let day = new Date();
 let dayNames = new Array(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]);
@@ -8,7 +8,7 @@ export default function CurrentWeather(props) {
       return(
       <div className="current-weather-component app-component">
         <h1 className="current-weather-city">
-            <img alt="weather logo" className="weather-icon" src={ Image } />
+            <img alt="weather logo" className="weather-icon" src={ props.currentInformation.icon } />
             { props.currentInformation.location }
         </h1>
         <h2 className="current-weather-day">{dayNames[day.getDay()]} </h2>
