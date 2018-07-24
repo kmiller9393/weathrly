@@ -60,7 +60,7 @@ h1 {
   grid-column: 2 / 2;
   grid-row: 1;
   height: 1em;
-  margin: 1em;
+  margin-bottom: 1em;
   opacity: .9;
   padding: 0;
   text-align: center;
