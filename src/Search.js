@@ -9,14 +9,6 @@ export default class Search extends Component {
     }
   }
 
-  setLocalStorage() {
-    localStorage.setItem('savedLocation', this.state.userInput)
-  }
-
-  getLocalStorage() {
-    
-  }
-
   render() {
     return (
       <form className="App-intro app-component search-component">
