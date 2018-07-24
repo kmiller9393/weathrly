@@ -4,7 +4,6 @@ import { shallow, mount } from 'enzyme';
 import Welcome from '../Welcome';
 
 describe('WELCOME', () => {
-  it('', () => {
-
-  })
+  expect(wrapper).toBeDefined();
+  });
 })

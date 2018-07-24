@@ -3,7 +3,13 @@ import { shallow, mount } from 'enzyme';
 
 import SevenHour from '../SevenHour';
 
-describe('SEVENHOUR', () => {
+describe('SevenHour component', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<SevenHour />);
+  })
+
   it('', () => {
 
   })
