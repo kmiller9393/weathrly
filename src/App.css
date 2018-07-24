@@ -31,6 +31,27 @@ h1 {
   width: 100%;
 }
 
+/* WELCOME COMPONENT
+.App-header {
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+}
+
+.App-header .App-title {
+  font-size: 6em;
+  padding-top: 12%;
+  margin: 0;
+  text-align: center;
+}
+
+.App-header .App-intro {
+  background-color: transparent;
+  height: 4em;
+  margin: 0 auto;
+  width: 65%;
+} */
+
+
 /* SEARCH COMPONENT */
 .search-component {
   color: #bbbbbb;
