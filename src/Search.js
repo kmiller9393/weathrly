@@ -4,13 +4,16 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: this.props.location
+      userInput: this.props.location,
+      location: false
     }
   }
 
   render() {
     return (
-      <form className="App-intro app-component search-component">
+      <form
+        className={localStorage.getItem('inputLocation') ? "App-intro app-component search-component" : "welcome-search"}
+      >
         <input 
           type="text" 
           value={this.state.userInput}
@@ -19,7 +22,7 @@ export default class Search extends Component {
               userInput: e.target.value
             })
           }}
-          placeholder="Search for a location" 
+          placeholder={localStorage.getItem('inputLocation') ? "Search for a location" : "Search for a location and press Enter to submit"} 
           className="location-search-input" 
           />
         <button className="location-search-button" onClick={(e) => {
