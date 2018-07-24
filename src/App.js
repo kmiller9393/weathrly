@@ -34,7 +34,9 @@ class App extends Component {
       })
     })
     .catch(err => alert('Please Enter a Valid Location.',
-      localStorage.clear()))
+      localStorage.clear()),
+      window.location.reload()
+    )
   }
 
    componentDidMount = () => {
