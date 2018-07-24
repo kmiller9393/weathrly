@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
+import cityData from './cityData.js';
+const Trie = require('@kmiller9393/complete-me');
+
 
 export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
       userInput: this.props.location,
-      location: false
+      getSuggestions: []
     }
+    this.trie = new Trie();
+    this.trie.populate(cityData.cities);
+    console.log(this.trie)
+  }
+
+  filterSuggestions() {
+    if (this.state.userInput) {
+      this.setState({ getSuggestions: this.trie.suggest(this.state.userInput) })
+    } else {
+      this.setState({ getSuggestions: [] })
+
+    }
+    console.log(this.state.getSuggestions);
   }
 
   render() {
@@ -19,8 +35,9 @@ export default class Search extends Component {
           value={this.state.userInput}
           onChange={(e) => {
             this.setState({
-              userInput: e.target.value
+              userInput: e.target.value,
             })
+            this.filterSuggestions(e)
           }}
           placeholder={localStorage.getItem('inputLocation') ? "Search for a location" : "Search for a location and press Enter to submit"} 
           className="location-search-input" 

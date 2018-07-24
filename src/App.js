@@ -33,11 +33,11 @@ class App extends Component {
         tenDays: weatherData.tenDays
       })
     })
-    .catch(err => alert('Please Enter a Valid Location.',
-      localStorage.clear()),
-      window.location.reload()
-    )
-  }
+
+    .catch(err => alert('Please Enter a Valid Location.', 
+      localStorage.clear())
+  )}
+
 
    componentDidMount = () => {
     if (localStorage.getItem('inputLocation')) {
