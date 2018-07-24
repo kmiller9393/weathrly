@@ -10,12 +10,13 @@ export const currentWeather = data => {
         currentHigh: currDay.high.fahrenheit + '° F', 
         currentLow: currDay.low.fahrenheit + '° F', 
         conditions: currDay.conditions, 
-        icon: currDay.icon_url ,
+        currentDay: currDay.date.weekday,
+        icon: currDay.icon_url,
         overview: data.forecast.txt_forecast.forecastday[0].fcttext
       };
 
   sevenHours = data.hourly_forecast;
-  
+
   tenDays = data.forecast.simpleforecast.forecastday;
 
   weatherData = {
