@@ -32,10 +32,11 @@ class App extends Component {
         tenDays: weatherData.tenDays
       })
     })
+    .catch(err => alert('Please Enter a Valid Location.'))
   }
 
    componentDidMount = () => {
-    if (Object.keys(localStorage).length > 0) {
+    if (localStorage.getItem('inputLocation')) {
       let savedLocation = localStorage.getItem('inputLocation')
 
       this.filterLocation(savedLocation);
@@ -61,18 +62,17 @@ class App extends Component {
         <Welcome />
         <section className="main-section">
           <Search 
-          location={this.state.location}
-          filterLocation={this.filterLocation}
+            location={this.state.location}
+            filterLocation={this.filterLocation}
           />
           { this.state.lookup && <CurrentWeather 
-          currentInformation={this.state.currentWeather}
+            currentInformation={this.state.currentWeather}
           /> }
           { this.state.lookup && <SevenHour 
-          sevenHours={this.state.sevenHours}
+            sevenHours={this.state.sevenHours}
           /> }
-          {/* <Card /> */}
           {this.state.lookup && <TenDay 
-          tenDays={this.state.tenDays}  
+            tenDays={this.state.tenDays}  
           /> }
         </section>
       </div>
