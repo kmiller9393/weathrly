@@ -56,7 +56,6 @@ class App extends Component {
       this.getWeather();
     }, 10);  
       localStorage.setItem('inputLocation', location);
-
   }
 
   render() {

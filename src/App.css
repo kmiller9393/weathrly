@@ -7,6 +7,21 @@ body {
   min-height: 100vh;
 }
 
+.App {
+  padding: 0;
+  text-align: center;
+}
+
+input, button {
+  border: 0;
+  font-size: 1.2em;
+  height: 100%;
+  margin: 0 1em 0 1em;
+  outline: none;
+  padding: 0;
+  border-radius: 2.25em;
+}
+
 h1 {
   margin-top: 0;
 }
@@ -24,6 +39,12 @@ h1 {
   width: 85%;
 }
 
+.app-component {
+  background-color: #00000060;
+  border-radius: 25px;
+  padding: 1em;
+}
+
 .card-template {
   background-color: #ffffff65;
   border-radius: .5em;
@@ -31,26 +52,48 @@ h1 {
   width: 100%;
 }
 
-/* WELCOME COMPONENT
+/* WELCOME COMPONENT */
 .App-header {
+  color: black;
   font-family: 'PT Sans', sans-serif;
+  font-size: large;
+  grid-column: 2 / 2;
+  grid-row: 1;
+  height: 1em;
+  margin: 1em;
+  opacity: .9;
+  padding: 0;
   text-align: center;
 }
 
 .App-header .App-title {
   font-size: 6em;
+  margin: 0 20%;
   padding-top: 12%;
-  margin: 0;
+  position: absolute;
   text-align: center;
+  top: 0%;
+  width: 60%;
 }
 
-.App-header .App-intro {
+.welcome-search {
   background-color: transparent;
   height: 4em;
-  margin: 0 auto;
-  width: 65%;
-} */
+  margin: 45% 50%;
+  width: 100%;
+}
 
+.welcome-search input {
+  border-radius: 1em;
+  font-size: 1.5em;
+  margin: 0;
+  opacity: .9;
+  width: 100%;
+}
+
+.welcome-search .location-search-button {
+  display: none;
+}
 
 /* SEARCH COMPONENT */
 .search-component {
@@ -81,8 +124,8 @@ h1 {
 
 .seven-hour-title {
   font-size: 1.75em;
-  opacity: .6;
   margin: 0;
+  opacity: .6;
   padding: 0;
   color: white;
 }
@@ -128,15 +171,15 @@ h1 {
 
 .seven-hour-times {
   color: #ffffff95;
-  text-decoration: underline;
   margin-top: 0;
+  text-decoration: underline;
 }
 
 /* CURRENT WEATHER */
 .current-weather-component {
   color: #d1d1d1;
-  grid-row: 2 / span 1;
   grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
   margin-top: 1em;
   width: 90%;
 }
@@ -149,8 +192,8 @@ h1 {
   display: flex;
   font-size: 2em;
   justify-content: space-between;
-  padding: .25em .75em 0 .75em;
   margin: 0;
+  padding: .25em .75em 0 .75em;
 }
 
 .current-weather-condition {
@@ -208,20 +251,19 @@ strong {
 
 .ten-day-container {
   display: inline-flex;
-  justify-content: space-between;
   height: 91%;
+  justify-content: space-between;
   width: 100%;
 }
 
 .ten-day-container .card-template {
-  /* background-color: #bbbbbb90; */
   border-radius: .75em;
   color: #333;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   font-weight: 700;
   height: 90%;
+  justify-content: space-around;
   width: 9.6%;
 }
 
@@ -268,43 +310,6 @@ strong {
 
 .ten-day-day h3 {
   line-height: 0;
-}
-
-
-.app-component {
-  background-color: #00000060;
-  border-radius: 25px;
-  padding: 1em;
-}
-
-input, button {
-  border: 0;
-  font-size: 1.2em;
-  height: 100%;
-  margin: 0 1em 0 1em;
-  outline: none;
-  padding: 0;
-  border-radius: 2.25em;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  color: black;
-  font-size: large;
-  grid-column: 2 / 2;
-  grid-row: 1;
-  height: 1em;
-  margin: 1em;
-  opacity: .6;
-  padding: 0;
 }
 
 @keyframes App-logo-spin {
