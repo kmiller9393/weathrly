@@ -32,12 +32,13 @@ class App extends Component {
         tenDays: weatherData.tenDays
       })
     })
-    .catch(err => alert('Please Enter a Valid Location.'))
+    .catch(err => alert('Please Enter a Valid Location.',
+      localStorage.clear()))
   }
 
    componentDidMount = () => {
     if (localStorage.getItem('inputLocation')) {
-      let savedLocation = localStorage.getItem('inputLocation')
+      let savedLocation = localStorage.getItem('inputLocation');
 
       this.filterLocation(savedLocation);
     }
