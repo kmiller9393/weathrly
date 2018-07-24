@@ -1,5 +1,4 @@
 import React from 'react';
-import { currentWeather } from './cleaners.js';
 
 export default function CurrentWeather(props) {
       return(

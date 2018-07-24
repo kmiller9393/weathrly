@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Index from './index';
 
 export default class Search extends Component {
   constructor(props) {
