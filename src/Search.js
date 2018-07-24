@@ -20,13 +20,16 @@ export default class Search extends Component {
       this.setState({ getSuggestions: this.trie.suggest(this.state.userInput) })
     } else {
       this.setState({ getSuggestions: [] })
+
     }
     console.log(this.state.getSuggestions);
   }
 
   render() {
     return (
-      <form className="App-intro app-component search-component">
+      <form
+        className={localStorage.getItem('inputLocation') ? "App-intro app-component search-component" : "welcome-search"}
+      >
         <input 
           type="text" 
           value={this.state.userInput}
@@ -36,7 +39,7 @@ export default class Search extends Component {
             })
             this.filterSuggestions(e)
           }}
-          placeholder="Search for a location" 
+          placeholder={localStorage.getItem('inputLocation') ? "Search for a location" : "Search for a location and press Enter to submit"} 
           className="location-search-input" 
           />
         <button className="location-search-button" onClick={(e) => {
