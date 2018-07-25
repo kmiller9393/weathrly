@@ -17,7 +17,7 @@ class App extends Component {
       tenDays: [],
       location: '',
       lookup: false,
-      greeting: true,
+      greeting: true
     }
   }
 
@@ -34,6 +34,7 @@ class App extends Component {
     })
     .catch(err => { 
       alert('Please enter a valid location.');
+      localStorage.clear();
     })
   }
 

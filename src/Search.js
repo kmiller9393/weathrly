@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import cityData from './cityData.js';
-const Trie = require('@kmiller9393/complete-me');
+import Trie from './Trie.js'
+// const Trie = require('@kmiller9393/complete-me');
 
 export default class Search extends Component {
   constructor(props) {
@@ -14,7 +15,6 @@ export default class Search extends Component {
   }
 
   filterSuggestions = () => {
-    console.log(this.state.userInput)
     if (!this.state.userInput) {
       this.getSuggestions = [];
     } else {
