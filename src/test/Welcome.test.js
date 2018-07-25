@@ -4,6 +4,13 @@ import { shallow, mount } from 'enzyme';
 import Welcome from '../Welcome';
 
 describe('WELCOME', () => {
-  expect(wrapper).toBeDefined();
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<Welcome />);
+  })
+
+  it ('should exist', () => {
+    expect(wrapper).toBeDefined();
   });
 })

@@ -17,12 +17,11 @@ class App extends Component {
       tenDays: [],
       location: '',
       lookup: false,
-      greeting: true
+      greeting: true,
     }
-
   }
 
-  getWeather = () => {
+  getWeather = (location) => {
     fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${this.state.location}.json`)
     .then(response => response.json())
     .then(data => {
@@ -33,21 +32,19 @@ class App extends Component {
         tenDays: weatherData.tenDays
       })
     })
+    .catch(err => { 
+      alert('Please enter a valid location.');
+    })
+  }
 
-    .catch(err => alert('Please Enter a Valid Location.', 
-      localStorage.clear())
-  )}
-
-
-   componentDidMount = () => {
-    if (localStorage.getItem('inputLocation')) {
+  componentDidMount = () => {
+    if (localStorage.length) {
       let savedLocation = localStorage.getItem('inputLocation');
 
       this.filterLocation(savedLocation);
     }
   }  
  
-
   filterLocation = (location) => {
     this.setState({
       location: location,
@@ -72,7 +69,7 @@ class App extends Component {
           { this.state.lookup && <CurrentWeather 
             currentInformation={this.state.currentWeather}
           /> }
-          { this.state.lookup && <SevenHour 
+          { this.state.lookup &&  <SevenHour 
             sevenHours={this.state.sevenHours}
           /> }
           {this.state.lookup && <TenDay 
