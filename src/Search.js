@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cityData from './cityData.js';
-const Trie = require('@kmiller9393/complete-me');
+// const Trie = require('@kmiller9393/complete-me');
 
 
 export default class Search extends Component {
@@ -10,9 +10,9 @@ export default class Search extends Component {
       userInput: this.props.location,
       getSuggestions: []
     }
-    this.trie = new Trie();
-    this.trie.populate(cityData.cities);
-    console.log(this.trie)
+    // this.trie = new Trie();
+    // this.trie.populate(cityData.cities);
+    // console.log(this.trie)
   }
 
   filterSuggestions() {
