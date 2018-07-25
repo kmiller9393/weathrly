@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-
 import Welcome from '../Welcome';
 
 describe('WELCOME', () => {
@@ -13,4 +12,8 @@ describe('WELCOME', () => {
   it ('should exist', () => {
     expect(wrapper).toBeDefined();
   });
+
+  it ('should return a header', () => {
+    expect(wrapper.find('header').length).toEqual(1);
+  })
 })
