@@ -1,5 +1,5 @@
 export default {
-    cities : [
+    cities: [
     "New York, NY",
     "Los Angeles, CA",
     "Chicago, IL",
