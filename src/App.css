@@ -43,12 +43,15 @@ h1 {
   background-color: #00000060;
   border-radius: 25px;
   padding: 1em;
+  margin-right: .5em;
 }
 
 .card-template {
   background-color: #ffffff65;
   border-radius: .5em;
   height: 8em;
+  min-width: 115px;
+  margin-right: .25em;
   width: 100%;
 }
 
@@ -250,9 +253,11 @@ strong {
 }
 
 .ten-day-container {
+  border-radius: .4em;
   display: inline-flex;
   height: 91%;
   justify-content: space-between;
+  overflow-y: scroll;
   width: 100%;
 }
 
@@ -312,7 +317,265 @@ strong {
   line-height: 0;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media screen and (max-width: 1500px) {
+  .welcome-search {
+    height: 5em;
+    left: 20%;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    width: 60%;
+  }
+
+  .main-section {
+    width: 95%;
+  }
+
+  .card-template {
+    margin-right: .5em;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .App-header .App-title {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+  }
+
+  .welcome-search {
+    left: 15%;
+    width: 70%;
+  }
+
+  .welcome-search .location-search-button {
+    border-radius: 1em;
+    display: block;
+    margin: 2em auto;
+  }
+
+  .main-section {
+    width: 98%;
+  }
+
+  .search-component {
+    display: inline-flex;
+    justify-content: space-around;
+  }
+  
+  .location-search-input {
+    margin: 0;
+    text-indent: .2em;
+  }
+
+  .location-search-button {
+    margin: 0;
+  }
+  
+  .seven-hour-article .card-template {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 34% 66%;
+  }
+
+  .seven-hour-article .card-hour {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    width: 80%;
+  }
+  
+  .seven-hour-article .card-temp {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    height: 80%;
+    margin: 10%;
+    width: 80%;
+  }
+
+  .seven-hour-article img {
+    grid-column: 2 / span 1; 
+    grid-row: 1 / span 2;
+    margin: 10%;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .App-header .App-title {
+    font-size: 3em;
+  }
+
+  .welcome-search {
+    font-size: .8em;
+    height: 4em;
+    top: 35%;
+  }
+  
+  .ten-day-component {
+    height: 35em;
+  }
+
+  .ten-day-container {
+    flex-direction: column;
+    height: 93%;
+    overflow: scroll;
+  }
+
+  .ten-day-component .card-template {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  .card-template .card-day {
+    grid-column: 1;
+    font-size: 1.25em;
+    height: 30%;
+    margin-top: 20%;
+    width: 100%;
+  }
+
+  .day-extremes-container {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.5em;
+    height: 40%;
+    margin-top: 10%;
+  }
+
+  .ten-day-component .card-template img {
+    grid-column: 3;
+    height: 6em;
+    margin-top: 5%;
+    width: 6em;
+  }
+  
+  .ten-day-container .card-template {
+    flex-direction: row;
+    min-height: 7em;
+    margin-bottom: .5em;
+    width: 100%;
+  }
+  
+  .ten-day-container .card-template img {
+    /* width: 10%; */
+  }
+  
+}
+
+@media screen and (max-width: 750px) {
+  .main-section {
+    display: block;
+    margin: 0 5%;
+    width: 90%;
+  }
+
+  .app-component {
+    margin: 1em 0;
+    padding: 1em 0;
+    width: 100%;
+  }
+
+  .search-component {
+    border-radius: 0;
+    background-color: #333;
+    justify-content: space-between;
+    height: 3em;
+    left: 0;
+    margin: 0;
+    padding: 1.5em 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+  }
+
+  .location-search-input {
+    border-radius: .75em;
+    margin: 0 1em 0 3em;
+    width: 70%;
+  }
+
+  .location-search-button {
+    border-radius: .75em;
+    margin: 0 3em 0 0;
+    width: 20%;
+  }
+
+  .current-weather-component {
+    margin-top: 7em;
+  }
+  
+  .seven-hour-article,
+  .ten-day-container {
+    margin: 0 10%;
+    width: 80%;
+  }
+
+  .seven-hour-article {
+    height: 90%;
+    padding: 1em 0;
+  }
+
+  .seven-hour-component {
+    height: 35em;
+  }
+
+  .seven-hour-article .card-template {
+    width: 100%;
+  }
+
+  .seven-hour-article .card-template .card-day {
+    display: none;
+  }
+
+
+}
+
+@media screen and (max-width: 500px) {
+  .location-search-input {
+    border-radius: .75em;
+    margin: 0 1em 0 1em;
+    width: 60%;
+  }
+
+  .location-search-button {
+    border-radius: .75em;
+    margin: 0 1em 0 0;
+    width: 35%;
+  }
+
+  .seven-hour-article .card-hour {
+    font-size: 1.5em;
+    font-weight: 800;
+    margin: .5em;
+  }
+
+  .ten-day-container .card-template {
+    display: grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: 50% 50%;
+    height: 25em;
+  }
+
+  .ten-day-container .card-day {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    margin: 0 auto;
+  }
+
+  .ten-day-component .day-extremes-container {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .ten-day-component .card-template img {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
