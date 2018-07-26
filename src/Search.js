@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import cityData from './cityData.js';
-// import Trie from './Trie.js'
 const Trie = require('@kmiller9393/complete-me');
 
 export default class Search extends Component {
