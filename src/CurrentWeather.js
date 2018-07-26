@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function CurrentWeather(props) {
+      console.log(props)
       return(
       <div className="current-weather-component app-component">
         <h1 className="current-weather-city">

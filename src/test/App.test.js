@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import App from '../App.js';
 
-describe('APP', () => {
-//   let wrapper;
-
+describe('App Component', () => {
+  let wrapper;
+  
   beforeEach(() => {
     wrapper = shallow(<App />)
     localStorage.clear();
@@ -39,5 +39,17 @@ describe('APP', () => {
     expect(wrapper.find('TenDay').length).toEqual(1);
   });
   
+  it('should retrieve data from localStorage on mount', () => {
+    const location = 'Denver, CO'
+      
+    localStorage.setItem('newLocation', (location));
+    let savedLocation = localStorage.getItem('newLocation');
+
+    wrapper.setState({
+      location: savedLocation
+    })
+
+    expect(wrapper.state().location).toEqual('Denver, CO');
+  });
 })
 
