@@ -13,7 +13,7 @@ describe('Welcome component', () => {
     expect(wrapper).toBeDefined();
   });
 
-  it ('should return a header', () => {
+  it ('should return a header and a h1 element', () => {
     expect(wrapper.find('header').length).toEqual(1);
     expect(wrapper.find('h1').length).toEqual(1);
   })
