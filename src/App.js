@@ -21,7 +21,8 @@ class App extends Component {
   }
 
   getWeather = (location) => {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/${this.state.location}.json`)
+    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/
+      ${this.state.location}.json`)
     .then(response => response.json())
     .then(data => {
       let weatherData = currentWeather(data)
