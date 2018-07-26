@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cityData from './cityData.js';
-import Trie from './Trie.js'
-// const Trie = require('@kmiller9393/complete-me');
+// import Trie from './Trie.js'
+const Trie = require('@kmiller9393/complete-me');
 
 export default class Search extends Component {
   constructor(props) {
@@ -18,9 +18,8 @@ export default class Search extends Component {
     if (!this.state.userInput) {
       this.getSuggestions = [];
     } else {
-      this.getSuggestions = this.trie.suggest(this.state.userInput);
+      this.getSuggestions = this.trie.suggest(this.state.userInput).splice(0, 4);
     }
-    console.log(this.getSuggestions);
   }
 
   changeLocation = (e) => {
@@ -33,6 +32,7 @@ export default class Search extends Component {
         className={localStorage.length ? "App-intro app-component search-component" : "welcome-search"}
       >
         <input 
+          list="city-list"
           type="text" 
           value={this.state.userInput}
           onChange={(e) => {
@@ -41,6 +41,9 @@ export default class Search extends Component {
           placeholder={localStorage.getItem('inputLocation') ? "Search for a location" : "Search for a location and press Enter to submit"} 
           className="location-search-input" 
           />
+        <datalist id="city-list">
+          {this.getSuggestions.map(suggestion => <option> {suggestion} </option> )}
+        </datalist>    
         <button className="location-search-button" onClick={(e) => {
           e.preventDefault();
           this.props.filterLocation(this.state.userInput);

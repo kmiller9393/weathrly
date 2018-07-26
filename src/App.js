@@ -16,8 +16,7 @@ class App extends Component {
       sevenHours: [],
       tenDays: [],
       location: '',
-      lookup: false,
-      greeting: true
+      lookup: false
     }
   }
 
@@ -49,8 +48,7 @@ class App extends Component {
   filterLocation = (location) => {
     this.setState({
       location: location,
-      lookup: true,
-      greeting: false
+      lookup: true
     })
     setTimeout(() => {
       this.getWeather();
@@ -61,7 +59,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        { this.state.greeting && <Welcome /> }
+        { !this.state.lookup && <Welcome /> }
         <section className="main-section">
           <Search 
             location={this.state.location}

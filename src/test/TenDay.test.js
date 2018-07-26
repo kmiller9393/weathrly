@@ -4,20 +4,20 @@ import { shallow, mount } from 'enzyme';
 import TenDay from '../TenDay';
 
 describe('TenDay component', () => {
-  let wrapper;
+//   let wrapper;
 
-  let TenDay = {
+//   let TenDay = {
     
-  }
+//   }
 
-day icon high low//object here 
+// day icon high low//object here 
 
-  beforeEach(() => {
-    wrapper = mount(<Card
-    day={day.date.weekday} )
-  }
+//   beforeEach(() => {
+//     wrapper = mount(<Card
+//     day={day.date.weekday} )
+//   }
 
-  it('', () => {
+//   it('', () => {
 
-  })
+//   })
 })
