@@ -10,8 +10,8 @@ export default class Search extends Component {
       userInput: this.props.location,
     }
     this.getSuggestions = [];
-    this.trie = new Trie();
-    this.trie.populate(cityData.cities);
+    // this.trie = new Trie();
+    // this.trie.populate(cityData.cities);
   }
 
   filterSuggestions = () => {
@@ -24,7 +24,9 @@ export default class Search extends Component {
   }
 
   changeLocation = (e) => {
-    this.setState({userInput: e.target.value}, () => this.filterSuggestions())
+    this.setState({userInput: e.target.value}
+      // () => this.filterSuggestions()
+    )
   }
 
   render() {

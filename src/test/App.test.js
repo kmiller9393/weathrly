@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import App from '../App.js';
 
 describe('APP', () => {
-  let wrapper;
+//   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(<App />)
@@ -39,5 +39,5 @@ describe('APP', () => {
     expect(wrapper.find('TenDay').length).toEqual(1);
   });
   
-  it('should ')
 })
+
