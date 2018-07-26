@@ -32,8 +32,12 @@ class App extends Component {
         tenDays: weatherData.tenDays
       })
     })
-    .catch(err => { 
-      alert('Please enter a valid location.');
+    .catch(err => {
+      alert('Please enter a valid location.'); 
+      // this.setState({
+      //   location: '',
+      //   lookup: false
+      // })
       localStorage.clear();
     })
   }
