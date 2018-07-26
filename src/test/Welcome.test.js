@@ -14,6 +14,6 @@ describe('Welcome component', () => {
   });
 
   it ('should return a header', () => {
-    expect(wrapper.find('header').length).toEqual(1);
+    expect(wrapper.find('header').length).toEqual(1)
   })
 })

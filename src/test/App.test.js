@@ -5,7 +5,7 @@ import App from '../App.js';
 
 describe('App Component', () => {
   let wrapper;
-
+  
   beforeEach(() => {
     wrapper = shallow(<App />)
     localStorage.clear();
@@ -52,3 +52,4 @@ describe('App Component', () => {
     expect(wrapper.state().location).toEqual('Denver, CO');
   });
 })
+

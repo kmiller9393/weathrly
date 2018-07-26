@@ -8,6 +8,7 @@ body {
 }
 
 .App {
+  font-family: sans-serif;
   padding: 0;
   text-align: center;
 }
@@ -334,7 +335,6 @@ strong {
   .card-template {
     margin-right: .5em;
   }
-
 }
 
 @media screen and (max-width: 1000px) {
@@ -462,11 +462,6 @@ strong {
     margin-bottom: .5em;
     width: 100%;
   }
-  
-  .ten-day-container .card-template img {
-    /* width: 10%; */
-  }
-  
 }
 
 @media screen and (max-width: 750px) {
