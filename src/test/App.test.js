@@ -21,8 +21,7 @@ describe('App Component', () => {
       sevenHours: [],
       tenDays: [],
       location: '',
-      lookup: false,
-      greeting: true
+      lookup: false
     })
   })
 
@@ -40,7 +39,7 @@ describe('App Component', () => {
   });
   
   it('should retrieve data from localStorage on mount', () => {
-    const location = 'Denver, CO'
+    const location = 'Denver, CO';
       
     localStorage.setItem('newLocation', (location));
     let savedLocation = localStorage.getItem('newLocation');

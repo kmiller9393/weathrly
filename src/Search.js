@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import cityData from './cityData.js';
-// import Trie from './Trie.js'
 const Trie = require('@kmiller9393/complete-me');
 
 export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: this.props.location,
+      userInput: this.props.location
     }
     this.getSuggestions = [];
     this.trie = new Trie();
@@ -18,18 +17,17 @@ export default class Search extends Component {
     if (!this.state.userInput) {
       this.getSuggestions = [];
     } else {
-      this.getSuggestions = this.trie.suggest(this.state.userInput).splice(0, 4);
+      this.getSuggestions = this.trie.suggest(this.state.userInput).splice(0, 5);
     }
   }
 
   changeLocation = (e) => {
-    this.setState({userInput: e.target.value}, () => this.filterSuggestions())
-  }
+    this.setState({ userInput: e.target.value}, () => this.filterSuggestions() )}
 
   render() {
     return (
       <form
-        className={localStorage.length ? "App-intro app-component search-component" : "welcome-search"}
+        className={this.props.location ? "App-intro app-component search-component" : "welcome-search"}
       >
         <input 
           list="city-list"
