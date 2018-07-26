@@ -17,7 +17,7 @@ describe('TenDay component', () => {
 //     day={day.date.weekday} )
 //   }
 
-//   it('', () => {
+  it('', () => {
 
-//   })
+  })
 })

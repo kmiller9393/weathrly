@@ -7,7 +7,7 @@ describe('SevenHour component', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<SevenHour />);
+    // wrapper = shallow(<SevenHour />);
   })
 
   it('', () => {
