@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cityData from './cityData.js';
+import Trie from './Trie.js'
 // const Trie = require('@kmiller9393/complete-me');
 
 export default class Search extends Component {
@@ -13,15 +14,14 @@ export default class Search extends Component {
     // this.trie.populate(cityData.cities);
   }
 
-  // filterSuggestions = () => {
-  //   console.log(this.state.userInput)
-  //   if (!this.state.userInput) {
-  //     this.getSuggestions = [];
-  //   } else {
-  //     this.getSuggestions = this.trie.suggest(this.state.userInput);
-  //   }
-  //   console.log(this.getSuggestions);
-  // }
+  filterSuggestions = () => {
+    if (!this.state.userInput) {
+      this.getSuggestions = [];
+    } else {
+      this.getSuggestions = this.trie.suggest(this.state.userInput);
+    }
+    console.log(this.getSuggestions);
+  }
 
   changeLocation = (e) => {
     this.setState({userInput: e.target.value}
