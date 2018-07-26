@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cityData from './cityData.js';
-const Trie = require('@kmiller9393/complete-me');
+// const Trie = require('@kmiller9393/complete-me');
 
 export default class Search extends Component {
   constructor(props) {
@@ -9,22 +9,24 @@ export default class Search extends Component {
       userInput: this.props.location,
     }
     this.getSuggestions = [];
-    this.trie = new Trie();
-    this.trie.populate(cityData.cities);
+    // this.trie = new Trie();
+    // this.trie.populate(cityData.cities);
   }
 
-  filterSuggestions = () => {
-    console.log(this.state.userInput)
-    if (!this.state.userInput) {
-      this.getSuggestions = [];
-    } else {
-      this.getSuggestions = this.trie.suggest(this.state.userInput);
-    }
-    console.log(this.getSuggestions);
-  }
+  // filterSuggestions = () => {
+  //   console.log(this.state.userInput)
+  //   if (!this.state.userInput) {
+  //     this.getSuggestions = [];
+  //   } else {
+  //     this.getSuggestions = this.trie.suggest(this.state.userInput);
+  //   }
+  //   console.log(this.getSuggestions);
+  // }
 
   changeLocation = (e) => {
-    this.setState({userInput: e.target.value}, () => this.filterSuggestions())
+    this.setState({userInput: e.target.value}
+      // () => this.filterSuggestions()
+    )
   }
 
   render() {

@@ -13,4 +13,10 @@ describe('WELCOME', () => {
   it ('should exist', () => {
     expect(wrapper).toBeDefined();
   });
+
+  it ('should return a header', () => {
+    expect(wrapper.find('header').length).toEqual(1)
+  })
+
+  
 })
