@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
-
 import Search from '../Search';
 
 describe('SEARCH', () => {
@@ -34,4 +33,15 @@ describe('SEARCH', () => {
     expect(button).toBeDefined();
   });
 
+  it('should call the filterLocation method when on click', () =>{
+    let fakeFunc = jest.fn();
+    wrapper = shallow(<Search filterLocation={ fakeFunc } />)
+
+    let submitButton = wrapper.find('button');
+
+    submitButton.simulate('click');
+
+    expect(fakeFunc).toHaveBeenCalled();
+    expect(fakeFunc).toHaveBeenCalledTimes(1);
+  })
 });

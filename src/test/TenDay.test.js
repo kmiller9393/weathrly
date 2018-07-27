@@ -66,9 +66,7 @@ describe('TenDay component', () => {
     expect(wrapper.props().tenDays).toBeDefined();
   })
 
-  it('should have properties for the current forecast', () => {
-    // wrapper = mount(<TenDay tenDays={mockWeather} />);  
-
+  it('should have properties for the ten day forecast', () => {
     let tenDayProps = wrapper.props().tenDays;
     console.log(tenDayProps)
     expect(tenDayProps[0].date.weekday).toEqual('Wednesday');
