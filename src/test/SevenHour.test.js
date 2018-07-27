@@ -54,7 +54,9 @@ describe('SevenHour component', () => {
     qpf: { english: '0.0', metric: '0' },
     snow: { english: '0.0', metric: '0' },
     pop: '0',
-    mslp: { english: '30.05', metric: '1018' } } ];
+    mslp: { english: '30.05', metric: '1018' } 
+    }
+  ];
 
   beforeEach(() => {
     wrapper = mount(<SevenHour sevenHours={ mockHourData } />);
@@ -65,4 +67,24 @@ describe('SevenHour component', () => {
   it('should exist', () => {
     expect(wrapper).toBeDefined();
   });
-})
+
+  it('should return elements', () => {
+    wrapper = shallow(<SevenHour sevenHours={ mockHourData } />);
+    expect(wrapper.find('div').length).toEqual(1);
+    expect(wrapper.find('h2').length).toEqual(1);
+    expect(wrapper.find('article').length).toEqual(1);
+    expect(wrapper.find('Card').length).toEqual(1);
+  });
+
+  it('should have a sevenHours property', () => {
+    expect(wrapper.props().sevenHours).toBeDefined();
+  });
+
+  it('should have properties for the seven hour forecast', () => {
+    let sevenHourProps = wrapper.props().sevenHours;
+    
+    expect(sevenHourProps[0].FCTTIME.civil).toEqual('12:00 PM');
+    expect(sevenHourProps[0].icon_url).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif'); 
+    expect(sevenHourProps[0].temp.english).toEqual('47');
+  });
+});

@@ -55,7 +55,7 @@ describe('SEARCH', () => {
     expect(button).toBeDefined();
   });
 
-  it('should call the filterLocation method when on click', () =>{
+  it('should call the filterLocation method on click', () =>{
     let fakeFunc = jest.fn();
     wrapper = shallow(<Search filterLocation={ fakeFunc } />)
 
@@ -65,5 +65,5 @@ describe('SEARCH', () => {
 
     expect(fakeFunc).toHaveBeenCalled();
     expect(fakeFunc).toHaveBeenCalledTimes(1);
-  })
+  });
 });

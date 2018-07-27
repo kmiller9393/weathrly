@@ -48,7 +48,7 @@ describe('TenDay component', () => {
 
   beforeEach(() => {
     wrapper = mount(<TenDay tenDays={mockWeather} />);
-  })  
+  });  
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
@@ -60,19 +60,18 @@ describe('TenDay component', () => {
     expect(wrapper.find('h2').length).toEqual(1);
     expect(wrapper.find('article').length).toEqual(1);
     expect(wrapper.find('Card').length).toEqual(1);
-  })
+  });
 
   it('should have a tenDays property', () => {
     expect(wrapper.props().tenDays).toBeDefined();
-  })
+  });
 
   it('should have properties for the ten day forecast', () => {
     let tenDayProps = wrapper.props().tenDays;
-    // console.log(tenDayProps)
+
     expect(tenDayProps[0].date.weekday).toEqual('Wednesday');
     expect(tenDayProps[0].icon_url).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif');
     expect(tenDayProps[0].high.fahrenheit).toEqual('51');
     expect(tenDayProps[0].low.fahrenheit).toEqual('32');
-  })
-
-})
+  });
+});
