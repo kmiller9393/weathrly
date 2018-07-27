@@ -10,7 +10,7 @@ describe('CurrentWeather component', () => {
 
   beforeEach(() => {
     wrapper = mount(<CurrentWeather currentInformation={mockWeather} />);
-  })
+  });
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
@@ -23,11 +23,11 @@ describe('CurrentWeather component', () => {
     expect(wrapper.find('h2').length).toEqual(3);
     expect(wrapper.find('p').length).toEqual(3);
     expect(wrapper.find('article').length).toEqual(1);
-  })
+  });
 
   it('should have a currentInformation property', () => {
     expect(wrapper.props().currentInformation).toBeDefined();
-  })
+  });
 
   it('should have properties for the current forecast', () => {
     expect(wrapper.props().currentInformation.currDayObj.location).toEqual('Louisville, KY');
@@ -37,5 +37,5 @@ describe('CurrentWeather component', () => {
     expect(wrapper.props().currentInformation.currDayObj.conditions).toEqual('Partly Cloudy');
     expect(wrapper.props().currentInformation.currDayObj.icon).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif');
     expect(wrapper.props().currentInformation.currDayObj.overview).toEqual('Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.');
-  })
+  });
 });
