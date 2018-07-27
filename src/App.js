@@ -8,7 +8,7 @@ import KEY from './apikeys.js';
 import './App.css';
 import TenDay from './TenDay.js';
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -32,10 +32,9 @@ class App extends Component {
         tenDays: weatherData.tenDays
       })
     })
-    .catch(err => {
-      if (this.state.lookup) {
-        console.log('lookup: true')
-      }
+    .catch(err => { 
+      localStorage.clear();
+      window.location.reload();
       alert('Please enter a valid location.');
     })
   }
@@ -82,5 +81,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
