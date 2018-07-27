@@ -25,5 +25,5 @@ export const currentWeather = data => {
     tenDays
   }
 
-  return (weatherData)
+  return (weatherData);
 }
