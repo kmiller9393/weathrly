@@ -1,3 +1,12 @@
+$black-sixty: #00000060;
+$white-sixty-five: #ffffff65;
+$white-ninety: #ffffff90;
+$i-flex: inline-flex;
+$s-between: space-between;
+$s-around: space-around;
+$main-radius: .75em;
+
+
 body {
   background-image: url('./images/Clouds.jpg');
   background-position: center center;
@@ -8,7 +17,7 @@ body {
 }
 
 .App {
-  font-family: sans-serif;
+  font-family: 'sans-serif';
   padding: 0;
   text-align: center;
 }
@@ -39,16 +48,15 @@ h1 {
   margin: 1em auto;
   width: 85%;
 }
-
 .app-component {
-  background-color: #00000060;
+  background-color: $black-sixty;
   border-radius: 25px;
   padding: 1em;
   margin-right: .5em;
 }
 
 .card-template {
-  background-color: #ffffff65;
+  background-color: $white-sixty-five;
   border-radius: .5em;
   height: 8em;
   min-width: 115px;
@@ -169,8 +177,8 @@ h1 {
 }
 
 .seven-hour-article .card-template {
-  display: inline-flex;
-  justify-content: space-around;
+  display: $i-flex;
+  justify-content: $s-around;
 }
 
 .seven-hour-times {
@@ -195,7 +203,7 @@ h1 {
 .current-weather-city {
   display: flex;
   font-size: 2em;
-  justify-content: space-between;
+  justify-content: $s-between;
   margin: 0;
   padding: .25em .75em 0 .75em;
 }
@@ -219,7 +227,7 @@ h1 {
 
 .expected-temps {
   display: flex;
-  justify-content: space-between;
+  justify-content: $s-between;
   margin: auto;
   width: 95%
 }
@@ -249,27 +257,27 @@ strong {
 }
 
 .ten-day-header {
-  color: #ffffff90;
+  color: $white-ninety;
   line-height: 0;
 }
 
 .ten-day-container {
   border-radius: .4em;
-  display: inline-flex;
+  display: $i-flex;
   height: 91%;
-  justify-content: space-between;
+  justify-content: $s-between;
   overflow-y: scroll;
   width: 100%;
 }
 
 .ten-day-container .card-template {
-  border-radius: .75em;
+  border-radius: $main-radius;
   color: #333;
   display: flex;
   flex-direction: column;
   font-weight: 700;
   height: 90%;
-  justify-content: space-around;
+  justify-content: $s-around;
   width: 9.6%;
 }
 
@@ -303,7 +311,7 @@ strong {
 }
 
 .day-extremes-high {
-  color: #8c1b1b;
+  color: #cc2828;
 }
 
 .day-extremes-high strong {
@@ -311,7 +319,7 @@ strong {
 }
 
 .day-extremes-low {
-  color: #1b478c;
+  color: #2867cc;
 }
 
 .ten-day-day h3 {
@@ -361,8 +369,8 @@ strong {
   }
 
   .search-component {
-    display: inline-flex;
-    justify-content: space-around;
+    display: $i-flex;
+    justify-content: $s-around;
   }
   
   .location-search-input {
@@ -480,7 +488,7 @@ strong {
   .search-component {
     border-radius: 0;
     background-color: #333;
-    justify-content: space-between;
+    justify-content: $s-between;
     height: 3em;
     left: 0;
     margin: 0;
@@ -491,13 +499,13 @@ strong {
   }
 
   .location-search-input {
-    border-radius: .75em;
+    border-radius: $main-radius;
     margin: 0 1em 0 3em;
     width: 70%;
   }
 
   .location-search-button {
-    border-radius: .75em;
+    border-radius: $main-radius;
     margin: 0 3em 0 0;
     width: 20%;
   }
@@ -534,13 +542,13 @@ strong {
 
 @media screen and (max-width: 500px) {
   .location-search-input {
-    border-radius: .75em;
+    border-radius: $main-radius;
     margin: 0 1em 0 1em;
     width: 60%;
   }
 
   .location-search-button {
-    border-radius: .75em;
+    border-radius: $main-radius;
     margin: 0 1em 0 0;
     width: 35%;
   }
