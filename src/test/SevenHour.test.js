@@ -6,6 +6,7 @@ import SevenHour from '../SevenHour';
 
 describe('SevenHour component', () => {
   let wrapper;
+
   let mockHourData= [ 
   { FCTTIME: 
      { hour: '12',

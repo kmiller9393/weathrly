@@ -66,5 +66,4 @@ describe('SEARCH', () => {
     expect(fakeFunc).toHaveBeenCalled();
     expect(fakeFunc).toHaveBeenCalledTimes(1);
   })
-
 });

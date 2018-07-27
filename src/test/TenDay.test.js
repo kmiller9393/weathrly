@@ -68,7 +68,7 @@ describe('TenDay component', () => {
 
   it('should have properties for the ten day forecast', () => {
     let tenDayProps = wrapper.props().tenDays;
-    console.log(tenDayProps)
+    // console.log(tenDayProps)
     expect(tenDayProps[0].date.weekday).toEqual('Wednesday');
     expect(tenDayProps[0].icon_url).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif');
     expect(tenDayProps[0].high.fahrenheit).toEqual('51');
