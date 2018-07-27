@@ -55,5 +55,4 @@ describe('SEARCH', () => {
       userInput: 'Golden, CO'
     })
   })
-
 });

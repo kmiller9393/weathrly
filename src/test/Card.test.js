@@ -26,8 +26,4 @@ describe('CARD', () => {
   it.skip('should', () => {
     
   })
-
-  it.skip('should', () => {
-
-  })
 })
