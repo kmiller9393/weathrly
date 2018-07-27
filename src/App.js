@@ -33,12 +33,10 @@ class App extends Component {
       })
     })
     .catch(err => {
-      alert('Please enter a valid location.'); 
-      // this.setState({
-      //   location: '',
-      //   lookup: false
-      // })
-      localStorage.clear();
+      if (this.state.lookup) {
+        console.log('lookup: true')
+      }
+      alert('Please enter a valid location.');
     })
   }
 

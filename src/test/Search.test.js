@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import Search from '../Search';
 
-describe('SEARCH', () => {
+describe('Search component', () => {
   let wrapper;
 
   beforeEach(() => {

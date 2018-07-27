@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cityData from './cityData.js';
-const Trie = require('@kmiller9393/complete-me');
+import Trie from '@kmiller9393/complete-me';
 
 export default class Search extends Component {
   constructor(props) {
@@ -46,7 +46,9 @@ export default class Search extends Component {
         </datalist>    
         <button className="location-search-button" onClick={() => {
           this.props.filterLocation(this.state.userInput);
-        }}>Submit</button>
+        }}>
+        Submit
+        </button>
       </form>
     );
   }

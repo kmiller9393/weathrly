@@ -13,9 +13,10 @@ export default function SevenHour(props) {
           sevenHours.map(hour => {
             return (
               <Card
-              hour={hour.FCTTIME.civil}
-              icon={hour.icon_url}
-              temp={hour.temp.english + '°F'}
+                hour={hour.FCTTIME.civil}
+                icon={hour.icon_url}
+                temp={hour.temp.english + '°F'}
+
               />  
             )
           })
