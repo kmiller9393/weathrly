@@ -58,6 +58,8 @@ describe('SevenHour component', () => {
   beforeEach(() => {
     wrapper = mount(<SevenHour sevenHours={ mockHourData } />);
   });
+ 
+
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();

@@ -14,6 +14,28 @@ describe('SEARCH', () => {
     expect(wrapper).toBeDefined();
   });
 
+  it('should have a default state', () => {
+    wrapper = mount(<Search location={'Denver, CO'} />);
+
+    expect(wrapper.state()).toEqual({
+      userInput: 'Denver, CO'
+    })
+  })
+
+  it('should update state', () => {
+    wrapper = mount(<Search location={'Denver, CO'} />);
+
+    expect(wrapper.state()).toEqual({
+      userInput: 'Denver, CO'
+    })
+
+    wrapper = mount(<Search location={'Golden, CO'} />);
+
+    expect(wrapper.state()).toEqual({
+      userInput: 'Golden, CO'
+    })
+  })
+    
   it('should render without crashing', () => {
     const parentElem = document.createElement('form');
     ReactDOM.render(<Search />, parentElem);
@@ -44,4 +66,5 @@ describe('SEARCH', () => {
     expect(fakeFunc).toHaveBeenCalled();
     expect(fakeFunc).toHaveBeenCalledTimes(1);
   })
+
 });
