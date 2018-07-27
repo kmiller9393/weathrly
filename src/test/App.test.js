@@ -28,11 +28,12 @@ describe('App Component', () => {
   it('should render child components on default', () => {
     expect(wrapper.find('Welcome').length).toEqual(1);
     expect(wrapper.find('Search').length).toEqual(1);
-  });
+  })
 
   it('should render child components after a location has been entered', () => {
     wrapper.setState({ location: 'anchorage, ak', lookup: true })
     
+    expect(wrapper.find('Welcome').length).toEqual(1);
     expect(wrapper.find('CurrentWeather').length).toEqual(1);
     expect(wrapper.find('SevenHour').length).toEqual(1);
     expect(wrapper.find('TenDay').length).toEqual(1);
@@ -50,5 +51,7 @@ describe('App Component', () => {
 
     expect(wrapper.state().location).toEqual('Denver, CO');
   });
+
+
 })
 

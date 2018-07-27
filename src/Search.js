@@ -23,12 +23,12 @@ export default class Search extends Component {
   }
 
   changeLocation = (e) => {
-    this.setState({ userInput: e.target.value}, () => this.filterSuggestions() )
+    this.setState({ userInput: e.target.value}, () => this.filterSuggestions());
   }
 
   render() {
     return (
-      <form
+      <form onSubmit={(e) => { e.preventDefault(); }}
         className={this.props.location ? "App-intro app-component search-component" : "welcome-search"}
       >
         <input 
@@ -44,8 +44,7 @@ export default class Search extends Component {
         <datalist id="city-list">
           {this.getSuggestions.map(suggestion => <option> {suggestion} </option> )}
         </datalist>    
-        <button className="location-search-button" onClick={(e) => {
-          e.preventDefault();
+        <button className="location-search-button" onClick={() => {
           this.props.filterLocation(this.state.userInput);
         }}>Submit</button>
       </form>
