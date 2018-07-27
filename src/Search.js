@@ -19,6 +19,7 @@ export default class Search extends Component {
     } else {
       this.getSuggestions = this.trie.suggest(this.state.userInput).splice(0, 5);
     }
+    console.log(this.trie.suggest)
   }
 
   changeLocation = (e) => {

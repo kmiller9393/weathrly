@@ -25,3 +25,4 @@ describe('Card component', () => {
     expect(wrapper.props().data).toEqual(10);
   });
 });
+
