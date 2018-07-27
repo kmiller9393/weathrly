@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import App from '../App.js';
 
-describe('App Component', () => {
+describe('App component', () => {
   let wrapper;
   
   beforeEach(() => {
@@ -31,9 +31,12 @@ describe('App Component', () => {
   });
 
   it('should render child components after a location has been entered', () => {
-    wrapper.setState({ location: 'anchorage, ak', lookup: true })
+    wrapper.setState({ location: 'anchorage, ak', lookup: false })
     
     expect(wrapper.find('Welcome').length).toEqual(1);
+
+    wrapper.setState({ location: 'anchorage, ak', lookup: true })
+
     expect(wrapper.find('CurrentWeather').length).toEqual(1);
     expect(wrapper.find('SevenHour').length).toEqual(1);
     expect(wrapper.find('TenDay').length).toEqual(1);
