@@ -16,7 +16,6 @@ export default function SevenHour(props) {
                 hour={hour.FCTTIME.civil}
                 icon={hour.icon_url}
                 temp={hour.temp.english + '°F'}
-
               />  
             )
           })
