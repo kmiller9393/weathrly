@@ -6,7 +6,7 @@ describe('Card component', () => {
   let wrapper;
 
   let tenDayMockData = 
-  [ { date: 
+   { date: 
      { epoch: '1513814400',
        pretty: '7:00 PM EST on December 20, 2017',
        day: 20,
@@ -43,9 +43,9 @@ describe('Card component', () => {
     avehumidity: 48,
     maxhumidity: 62,
     minhumidity: 36 }
-  ]
   
-  let mockHourData= [ 
+  
+  let mockHourData =  
   { FCTTIME: 
      { hour: '12',
        hour_padded: '12',
@@ -93,14 +93,17 @@ describe('Card component', () => {
     snow: { english: '0.0', metric: '0' },
     pop: '0',
     mslp: { english: '30.05', metric: '1018' } 
-    }
-  ];
+    };
 
   beforeEach(() => {
     wrapper = mount(
       <Card 
-      tenDays={tenDayMockData}
-      sevenHours={mockHourData}
+      day={tenDayMockData.date.weekday}
+      high={tenDayMockData.high.fahrenheit}
+      low={tenDayMockData.low.fahrenheit}
+      icon={tenDayMockData.date.icon_url}
+      hour={mockHourData.FCTTIME.civil}
+      temp={mockHourData.temp.english}
       />);
   });
 
@@ -116,18 +119,20 @@ describe('Card component', () => {
   });
 
   it('should render the proper data for both the SevenHour and TenDay components', () => {
-    let sevenHourProps = wrapper.props().sevenHours;
-    let tenDayProps = wrapper.props().tenDays;
+    const currentDay = wrapper.find('.card-day');
+    const currentHigh = wrapper.find('.day-extremes-high');
+    const currentLow = wrapper.find('.day-extremes-low');
 
-    expect(sevenHourProps[0].FCTTIME.civil).toEqual('12:00 PM');
-    expect(sevenHourProps[0].icon_url).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif'); 
-    expect(sevenHourProps[0].temp.english).toEqual('47');
-    
-    expect(tenDayProps[0].date.weekday).toEqual('Wednesday');
-    expect(tenDayProps[0].icon_url).toEqual('http://icons.wxug.com/i/c/k/partlycloudy.gif');
-    expect(tenDayProps[0].high.fahrenheit).toEqual('51');
-    expect(tenDayProps[0].low.fahrenheit).toEqual('32');
-  })
+    const currentHour = wrapper.find('.card-hour');
+    const currentTemp = wrapper.find('.card-temp');
+
+    expect(currentDay.text()).toEqual('Wednesday');
+    expect(currentHigh.text()).toEqual('51 / ');
+    expect(currentLow.text()).toEqual('32');
+
+    expect(currentHour.text()).toEqual('12:00 PM');
+    expect(currentTemp.text()).toEqual('47');
+  });
 
   it('should have props passed in', () => {
     wrapper = mount(<Card data={10} />)
