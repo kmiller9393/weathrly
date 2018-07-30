@@ -138,5 +138,6 @@ describe('Card component', () => {
     wrapper = mount(<Card data={10} />)
     expect(wrapper.props().data).toEqual(10);
   });
+
 });
 
