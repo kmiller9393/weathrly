@@ -51,10 +51,7 @@ export default class App extends Component {
     this.setState({
       location: location,
       lookup: true
-    })
-    setTimeout(() => {
-      this.getWeather();
-    }, 10);  
+    }, () => this.getWeather());
       localStorage.setItem('inputLocation', location);
   }
 
