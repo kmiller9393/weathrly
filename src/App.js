@@ -59,21 +59,21 @@ export default class App extends Component {
   };
 
   render() {
+    const {
+      lookup,
+      location,
+      currentWeather,
+      sevenHours,
+      tenDays
+    } = this.state;
     return (
       <div className="App">
-        {!this.state.lookup && <Welcome />}
+        {!lookup && <Welcome />}
         <section className="main-section">
-          <Search
-            location={this.state.location}
-            filterLocation={this.filterLocation}
-          />
-          {this.state.lookup && (
-            <CurrentWeather currentInformation={this.state.currentWeather} />
-          )}
-          {this.state.lookup && (
-            <SevenHour sevenHours={this.state.sevenHours} />
-          )}
-          {this.state.lookup && <TenDay tenDays={this.state.tenDays} />}
+          <Search location={location} filterLocation={this.filterLocation} />
+          {lookup && <CurrentWeather currentInformation={currentWeather} />}
+          {lookup && <SevenHour sevenHours={sevenHours} />}
+          {lookup && <TenDay tenDays={tenDays} />}
         </section>
       </div>
     );
