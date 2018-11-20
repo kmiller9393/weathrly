@@ -1,32 +1,33 @@
 import React from 'react';
 
 export default function CurrentWeather(props) {
+  const {
+    icon,
+    location,
+    currentDay,
+    conditions,
+    overview,
+    currentTemp,
+    currentHigh,
+    currentLow
+  } = props.currentInformation;
+
   return (
     <div className="current-weather-component app-component">
       <h1 className="current-weather-city">
-        <img
-          alt="weather logo"
-          className="weather-icon"
-          src={props.currentInformation.icon}
-        />
-        {props.currentInformation.location}
+        <img alt="weather logo" className="weather-icon" src={icon} />
+        {location}
       </h1>
-      <h2 className="current-weather-day">
-        {props.currentInformation.currentDay}{' '}
-      </h2>
-      <h2 className="current-weather-condition">
-        {props.currentInformation.conditions}
-      </h2>
-      <p>{props.currentInformation.overview}</p>
-      <h2 className="current-weather-temp">
-        {props.currentInformation.currentTemp}
-      </h2>
+      <h2 className="current-weather-day">{currentDay} </h2>
+      <h2 className="current-weather-condition">{conditions}</h2>
+      <p>{overview}</p>
+      <h2 className="current-weather-temp">{currentTemp}</h2>
       <article className="expected-temps">
         <p className="current-weather-high">
-          High:<strong>{props.currentInformation.currentHigh}</strong>
+          High:<strong>{currentHigh}</strong>
         </p>
         <p className="current-weather-low">
-          Low:<strong>{props.currentInformation.currentLow}</strong>
+          Low:<strong>{currentLow}</strong>
         </p>
       </article>
     </div>
