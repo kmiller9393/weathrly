@@ -14,12 +14,12 @@ export default class Search extends Component {
   }
 
   filterSuggestions = () => {
-    if (!this.state.userInput) {
+    const { userInput } = this.state;
+
+    if (!userInput) {
       this.getSuggestions = [];
     } else {
-      this.getSuggestions = this.trie
-        .suggest(this.state.userInput)
-        .splice(0, 5);
+      this.getSuggestions = this.trie.suggest(userInput).splice(0, 5);
     }
   };
 
@@ -30,13 +30,16 @@ export default class Search extends Component {
   };
 
   render() {
+    const { location, filterLocation } = this.props;
+    const { userInput } = this.state;
+
     return (
       <form
         onSubmit={e => {
           e.preventDefault();
         }}
         className={
-          this.props.location
+          location
             ? 'App-intro app-component search-component'
             : 'welcome-search'
         }
@@ -44,7 +47,7 @@ export default class Search extends Component {
         <input
           list="city-list"
           type="text"
-          value={this.state.userInput}
+          value={userInput}
           onChange={e => {
             this.changeLocation(e);
           }}
@@ -63,7 +66,7 @@ export default class Search extends Component {
         <button
           className="location-search-button"
           onClick={() => {
-            this.props.filterLocation(this.state.userInput);
+            filterLocation(userInput);
           }}
         >
           Submit
