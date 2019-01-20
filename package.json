@@ -4,9 +4,13 @@
   "private": true,
   "dependencies": {
     "@kmiller9393/complete-me": "git+https://github.com/kmiller9393/complete-me.git",
+    "merge": "^1.2.1",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-dev-utils": "^7.0.1",
+    "react-dom": "^16.7.0",
+    "react-scripts": "1.1.4",
+    "url-parse": "^1.4.4",
+    "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
     "start": "react-scripts start",
