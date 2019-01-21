@@ -21,7 +21,7 @@ export default class App extends Component {
 
   getWeather = location => {
     fetch(`https://cors-anywhere.herokuapp.com/http://api.wunderground.com/api/${
-      process.env.MY_API_KEY
+      process.env.REACT_APP_API_KEY
     }/conditions/hourly/forecast10day/q/
       ${this.state.location}.json`)
       .then(response => response.json())
@@ -40,10 +40,10 @@ export default class App extends Component {
       });
   };
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     if (localStorage.length) {
       let savedLocation = localStorage.getItem('inputLocation');
-      console.log(process.env.MY_API_KEY);
+
       this.filterLocation(savedLocation);
     }
   };
