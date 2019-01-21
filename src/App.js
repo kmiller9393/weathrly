@@ -4,7 +4,6 @@ import SevenHour from './SevenHour.js';
 import Search from './Search.js';
 import Welcome from './Welcome.js';
 import { currentWeather } from './cleaners.js';
-import KEY from './apikeys.js';
 import './App.css';
 import TenDay from './TenDay.js';
 
@@ -21,7 +20,9 @@ export default class App extends Component {
   }
 
   getWeather = location => {
-    fetch(`http://api.wunderground.com/api/${KEY}/conditions/hourly/forecast10day/q/
+    fetch(`https://cors-anywhere.herokuapp.com/http://api.wunderground.com/api/${
+      process.env.MY_API_KEY
+    }/conditions/hourly/forecast10day/q/
       ${this.state.location}.json`)
       .then(response => response.json())
       .then(data => {
@@ -42,7 +43,7 @@ export default class App extends Component {
   componentDidMount = () => {
     if (localStorage.length) {
       let savedLocation = localStorage.getItem('inputLocation');
-
+      console.log(process.env.MY_API_KEY);
       this.filterLocation(savedLocation);
     }
   };
