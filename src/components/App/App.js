@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Home from '../Home/Home';
 import Weather from '../Weather/Weather';
-import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
-import SevenHour from '../SevenHour/SevenHour.js';
-import TenDay from '../TenDay/TenDay.js';
 import { currentWeather } from '../../utils/cleaners.js';
 import './App.css';
 
