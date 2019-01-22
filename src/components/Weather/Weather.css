@@ -7,13 +7,14 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding-bottom: 1rem;
 }
 
 .weather-page-header {
   color: #f7f7f7;
   font-family: 'PT Sans', sans-serif;
-  font-size: 2.5rem;
-  margin: 0.5rem 0 1.5rem 0;
+  font-size: 2.3rem;
+  margin: 0 0 1.5rem 0;
 }
 
 .main-weather-container {

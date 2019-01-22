@@ -4,15 +4,15 @@ Weathrly is a responsive weather application built with React.js and tested usin
 
 ### Getting Started:
 
-  1. Clone down this repository.
-  2. cd into the `weathrly` directory.
-  3. `npm install`
-  4. `npm start`
+1. Clone down this repository.
+2. cd into the `weathrly` directory.
+3. `npm install`
+4. `npm start`
 
-![](./images/welcome-wire-frame.png)
-![](./images/weather-page.png)
+![](./src/images/weathrly-homepage.svg)
+![](./src/images/forecast-page.svg)
 
 #### Contributors:
 
- * [Kurt Miller](https://github.com/kmiller9393)
- * [Alex Bruce](https://github.com/Alexbruce1)
+- [Kurt Miller](https://github.com/kmiller9393)
+- [Alex Bruce](https://github.com/Alexbruce1)
