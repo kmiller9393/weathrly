@@ -1,0 +1,33 @@
+.App {
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+input,
+button {
+  border: 0;
+  font-size: 1.2em;
+  padding: 0;
+  border-radius: 4px;
+}
+
+input:focus,
+button:focus {
+  outline: 0;
+}
+
+.forecast-container {
+  background-color: #00000060;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.card-template {
+  background-color: #ffffff65;
+  border-radius: 5px;
+  height: 8em;
+  min-width: 115px;
+  margin-right: 0.25em;
+  width: 100%;
+}

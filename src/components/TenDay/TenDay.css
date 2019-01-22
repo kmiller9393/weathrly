@@ -1,0 +1,75 @@
+.ten-day-container {
+  height: 16em;
+  margin: 1.5rem;
+  width: 95%;
+}
+
+.ten-day-header {
+  color: #f7f7f7;
+  line-height: 0;
+}
+
+.ten-day-card-container {
+  border-radius: 0.4em;
+  display: inline-flex;
+  height: 91%;
+  justify-content: space-between;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.ten-day-card-container .card-template {
+  border-radius: 0.75em;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  height: 90%;
+  justify-content: space-around;
+  width: 9.6%;
+}
+
+.ten-day-card-container .card-month,
+.ten-day-card-container .card-hour,
+.ten-day-card-container .card-temp {
+  display: none;
+}
+
+.ten-day-card-container .card-day {
+  margin: 0;
+}
+
+.ten-day-card-container .card-template img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.day-extremes-high,
+.day-extremes-low {
+  font-size: 1.25em;
+  font-weight: 800;
+}
+
+.day-extremes-high,
+.day-extremes-low,
+.day-extremes-high strong {
+  display: inline;
+  vertical-align: middle;
+}
+
+.day-extremes-high {
+  color: #8c1b1b;
+}
+
+.day-extremes-high strong {
+  color: #333;
+}
+
+.day-extremes-low {
+  color: #1b478c;
+}
+
+.ten-day-day h3 {
+  line-height: 0;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './CurrentWeather.css';
 
 export default function CurrentWeather(props) {
   const {
@@ -13,15 +14,17 @@ export default function CurrentWeather(props) {
   } = props.currentInformation;
 
   return (
-    <div className="current-weather-component app-component">
+    <div className="current-weather-container forecast-container">
       <h1 className="current-weather-city">
         <img alt="weather logo" className="weather-icon" src={icon} />
         {location}
       </h1>
-      <h2 className="current-weather-day">{currentDay} </h2>
-      <h2 className="current-weather-condition">{conditions}</h2>
-      <p>{overview}</p>
-      <h2 className="current-weather-temp">{currentTemp}</h2>
+      <div className="day-conditions-container">
+        <h2 className="current-weather-day">{currentDay} </h2>
+        <h2 className="current-weather-condition">{conditions}</h2>
+        <p>{overview}</p>
+        <h2 className="current-weather-temp">{currentTemp}</h2>
+      </div>
       <article className="expected-temps">
         <p className="current-weather-high">
           High:<strong>{currentHigh}</strong>

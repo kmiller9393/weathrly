@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
-import CurrentWeather from './CurrentWeather.js';
-import SevenHour from './SevenHour.js';
-import Search from './Search.js';
-import Welcome from './Welcome.js';
-import { currentWeather } from './cleaners.js';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import Home from '../Home/Home';
+import Weather from '../Weather/Weather';
+import { currentWeather } from '../../utils/cleaners.js';
 import './App.css';
-import TenDay from './TenDay.js';
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
       currentWeather: {},
       sevenHours: [],
       tenDays: [],
-      location: '',
-      lookup: false
+      location: ''
     };
   }
 
@@ -23,7 +20,7 @@ export default class App extends Component {
     fetch(`https://cors-anywhere.herokuapp.com/http://api.wunderground.com/api/${
       process.env.REACT_APP_API_KEY
     }/conditions/hourly/forecast10day/q/
-      ${this.state.location}.json`)
+      ${location}.json`)
       .then(response => response.json())
       .then(data => {
         let weatherData = currentWeather(data);
@@ -35,12 +32,11 @@ export default class App extends Component {
       })
       .catch(err => {
         localStorage.clear();
-        window.location.reload();
         alert('Please enter a valid location.');
       });
   };
 
-  componentDidMount = async () => {
+  componentDidMount = () => {
     if (localStorage.length) {
       let savedLocation = localStorage.getItem('inputLocation');
 
@@ -51,32 +47,42 @@ export default class App extends Component {
   filterLocation = location => {
     this.setState(
       {
-        location: location,
-        lookup: true
+        location
       },
-      () => this.getWeather()
+      () => this.getWeather(this.state.location)
     );
     localStorage.setItem('inputLocation', location);
+    this.props.history.push('/weather');
   };
 
   render() {
-    const {
-      lookup,
-      location,
-      currentWeather,
-      sevenHours,
-      tenDays
-    } = this.state;
+    const { location, currentWeather, sevenHours, tenDays } = this.state;
     return (
       <div className="App">
-        {!lookup && <Welcome />}
-        <section className="main-section">
-          <Search location={location} filterLocation={this.filterLocation} />
-          {lookup && <CurrentWeather currentInformation={currentWeather} />}
-          {lookup && <SevenHour sevenHours={sevenHours} />}
-          {lookup && <TenDay tenDays={tenDays} />}
-        </section>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Home filterLocation={this.filterLocation} location={location} />
+            )}
+          />
+          <Route
+            path="/weather"
+            render={() => (
+              <Weather
+                currentWeather={currentWeather}
+                filterLocation={this.filterLocation}
+                location={location}
+                sevenHours={sevenHours}
+                tenDays={tenDays}
+              />
+            )}
+          />
+        </Switch>
       </div>
     );
   }
 }
+
+export default withRouter(App);

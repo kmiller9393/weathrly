@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
-import cityData from './cityData.js';
+import { withRouter } from 'react-router-dom';
+import cityData from '../../utils/cityData';
 import Trie from '@kmiller9393/complete-me';
+import searchIcon from '../../images/magnifying-glass-icon.svg';
+import './Search.css';
 
-export default class Search extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: this.props.location
+      userInput: '',
+      homeView: false
     };
     this.getSuggestions = [];
     this.trie = new Trie();
     this.trie.populate(cityData.cities);
+  }
+
+  componentDidMount() {
+    const { pathname } = this.props.location;
+
+    if (pathname === '/') {
+      this.setState({ homeView: true });
+      localStorage.clear();
+    } else if (pathname !== '/weather') {
+      this.setState({ homeView: false });
+    }
   }
 
   filterSuggestions = () => {
@@ -30,20 +45,24 @@ export default class Search extends Component {
   };
 
   render() {
-    const { location, filterLocation } = this.props;
-    const { userInput } = this.state;
+    const { filterLocation } = this.props;
+    const { userInput, homeView } = this.state;
 
     return (
       <form
         onSubmit={e => {
           e.preventDefault();
         }}
-        className={
-          location
-            ? 'App-intro app-component search-component'
-            : 'welcome-search'
-        }
+        className={homeView ? 'home-form' : 'weather-form'}
       >
+        <button
+          className={homeView ? 'home-search-button' : 'weather-search-button'}
+          onClick={() => {
+            filterLocation(userInput);
+          }}
+        >
+          <img src={searchIcon} alt="search button" />
+        </button>
         <input
           list="city-list"
           type="text"
@@ -54,24 +73,18 @@ export default class Search extends Component {
           placeholder={
             localStorage.getItem('inputLocation')
               ? 'Search for a location'
-              : 'Search for a location and press Enter to submit'
+              : 'Search for a location'
           }
-          className="location-search-input"
+          className={homeView ? 'home-search-input' : 'weather-search-input'}
         />
         <datalist id="city-list">
           {this.getSuggestions.map(suggestion => (
             <option> {suggestion} </option>
           ))}
         </datalist>
-        <button
-          className="location-search-button"
-          onClick={() => {
-            filterLocation(userInput);
-          }}
-        >
-          Submit
-        </button>
       </form>
     );
   }
 }
+
+export default withRouter(Search);
