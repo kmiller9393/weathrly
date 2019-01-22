@@ -1,0 +1,62 @@
+.seven-hour-container {
+  height: 90%;
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+  overflow: scroll;
+  width: 600px;
+}
+
+.seven-hour-title {
+  color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.seven-hour-article {
+  color: #333;
+  height: 93%;
+  overflow: scroll;
+  padding: 0;
+}
+
+.card-template {
+  align-items: center;
+  display: flex;
+}
+
+.seven-hour-article .card-template {
+  width: 99%;
+  margin: 0.25em auto;
+}
+
+.seven-hour-article .card-month,
+.seven-hour-article p strong {
+  display: none;
+}
+
+.seven-hour-article .card-hour {
+  font-size: 1.25em;
+  font-weight: 800;
+  margin: 0;
+}
+
+.seven-hour-article .card-temp {
+  font-size: 2em;
+  margin: 0 1.5em;
+}
+
+.seven-hour-article img {
+  height: 6em;
+  width: 6em;
+}
+
+.seven-hour-article .card-template {
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+.seven-hour-times {
+  color: #ffffff95;
+  margin-top: 0;
+  text-decoration: underline;
+}
