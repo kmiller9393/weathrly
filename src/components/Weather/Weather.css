@@ -1,0 +1,29 @@
+.weather-container {
+  background-color: #5b5b5b;
+  text-shadow: 1px 1px #000000;
+}
+
+.weather-header-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-page-header {
+  color: #f7f7f7;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 2.5rem;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.main-weather-container {
+  display: flex;
+  height: 70vh;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.weather-footer {
+  display: flex;
+  justify-content: center;
+}
