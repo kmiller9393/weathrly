@@ -1,0 +1,65 @@
+.current-weather-container {
+  align-self: center;
+  color: #f7f7f7;
+  height: 80%;
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
+  width: 650px;
+}
+
+.current-weather-day {
+  margin: 0.5em;
+}
+
+.current-weather-city {
+  display: flex;
+  font-size: 2em;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0.25em 0.75em 0 0.75em;
+}
+
+.current-weather-condition {
+  font-size: 1.75em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.current-weather-temp {
+  font-size: 3.25em;
+  margin: 0;
+}
+
+.weather-icon {
+  height: 2.5em;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.expected-temps {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 95%;
+}
+
+.current-weather-low {
+  color: #2867cc;
+  font-size: 1.75em;
+}
+
+.current-weather-high {
+  color: #cc2828;
+  font-size: 1.75em;
+}
+
+strong {
+  display: block;
+  font-size: 1.5em;
+}
+
+.day-conditions-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
