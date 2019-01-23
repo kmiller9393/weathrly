@@ -23,7 +23,7 @@ class Search extends Component {
     if (pathname === '/') {
       this.setState({ homeView: true });
       localStorage.clear();
-    } else if (pathname !== '/weather') {
+    } else if (pathname !== '/forecast') {
       this.setState({ homeView: false });
     }
   }

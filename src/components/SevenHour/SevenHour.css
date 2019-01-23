@@ -1,8 +1,14 @@
 .seven-hour-container {
+  background-color: #1b478c;
+  border-radius: 4px;
+  -moz-box-shadow: 0 0 10px #333;
+  -webkit-box-shadow: 0 0 10px #333;
+  box-shadow: 0 0 10px #333;
   height: 90%;
   margin-left: 1.5rem;
   margin-right: 0.5rem;
   overflow: scroll;
+  padding: 1rem;
   width: 600px;
 }
 
