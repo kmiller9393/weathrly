@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import Home from '../Home/Home';
-import Weather from '../Weather/Weather';
+import Forecast from '../Forecast/Forecast';
 import { currentWeather } from '../../utils/cleaners.js';
 import './App.css';
 
@@ -29,6 +29,7 @@ class App extends Component {
           sevenHours: weatherData.sevenHours,
           tenDays: weatherData.tenDays
         });
+        this.props.history.push('/forecast');
       })
       .catch(err => {
         localStorage.clear();
@@ -52,7 +53,6 @@ class App extends Component {
       () => this.getWeather(this.state.location)
     );
     localStorage.setItem('inputLocation', location);
-    this.props.history.push('/weather');
   };
 
   render() {
@@ -68,9 +68,9 @@ class App extends Component {
             )}
           />
           <Route
-            path="/weather"
+            path="/forecast"
             render={() => (
-              <Weather
+              <Forecast
                 currentWeather={currentWeather}
                 filterLocation={this.filterLocation}
                 location={location}
