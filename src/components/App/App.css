@@ -19,8 +19,6 @@ button:focus {
 
 .forecast-container {
   background-color: #00000060;
-  border-radius: 5px;
-  padding: 1em;
 }
 
 .card-template {
