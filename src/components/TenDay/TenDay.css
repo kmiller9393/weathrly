@@ -1,6 +1,12 @@
 .ten-day-container {
+  background-color: #1b478c;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #333;
   height: 16em;
-  margin: 1.5rem;
+  -moz-box-shadow: 0 0 10px #333;
+  margin: 0 1.5rem 1rem 1.5rem;
+  padding: 1em;
+  -webkit-box-shadow: 0 0 10px #333;
   width: 95%;
 }
 
