@@ -2,7 +2,7 @@
 
 Weathrly is a real-time weather application built with React.js, React Router and tested using Jest and Enzyme. This application utilizes Weather Underground's API to fetch and render weather forecast information from all around the world. It also includes an elegant User Interface that uses an autocomplete feature so that the user can easily search for a location.
 
-### [View Deployed Application](https://km-weathrly.herokuapp.com/)
+## [View Deployed Application](https://km-weathrly.herokuapp.com/)
 
 ### Getting Started Locally:
 
