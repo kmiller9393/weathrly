@@ -6,8 +6,8 @@ import searchIcon from '../../images/magnifying-glass-icon.svg';
 import './Search.css';
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       userInput: '',
       homeView: false
@@ -78,8 +78,8 @@ class Search extends Component {
           className={homeView ? 'home-search-input' : 'weather-search-input'}
         />
         <datalist id="city-list">
-          {this.getSuggestions.map(suggestion => (
-            <option> {suggestion} </option>
+          {this.getSuggestions.map((suggestion, index) => (
+            <option key={index}> {suggestion} </option>
           ))}
         </datalist>
       </form>
